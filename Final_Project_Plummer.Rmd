@@ -1,0 +1,604 @@
+---
+title: "Peruvian Speleothem Record of Climate and Hydrologic Variability
+  during MIS 6"
+author: Ian H. Plummer
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cosmo
+    highlight: breezedark
+
+---
+
+```{r message = FALSE, echo = FALSE, warning = FALSE, results = 'hide'}
+#loading in some of the necessary packages
+library(tidyverse)
+library(ggplot2)
+library(patchwork)
+library(reshape2)
+library(ggpubr)
+library(geoChronR)
+library(ggthemes)
+```
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+#load in a dataset I created that has the three Peruvian speleothems
+SA_Stals<- read_csv("./Data/ppds.csv")
+
+#loading in a file for modeled insolation
+inso<- read_csv("/Users/IP/Downloads/newinso.csv")
+```
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+SA_Stals_Inso<- full_join(SA_Stals,inso) # Joins the insolation and Peruvian Stal records so that they are combined in an easily graphable format
+```
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+#Next I wanted to create categorical groups depending on the MIS Substage the data is attached to
+misBreaks<- SA_Stals %>% 
+  filter(Stal == "19-11")  %>% 
+  mutate(Age_cat = case_when( Age >= 164000 ~ "MIS 6d", 
+                              Age < 164000 & Age >= 154000 ~ "MIS 6c", 
+                              Age < 154000 & Age >= 139000 ~ "MIS 6b", 
+                              Age < 139000 ~ "MIS 6a"))
+```
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+#Below we are loading in the lake records from Peru and Bolivia 
+Junin_clastic<- read.csv("./Data/JClass.csv") 
+TC_ms<- read.csv("./Data/Titikaka.csv")
+Jinin_glacial<- read.csv("/Users/IP/Downloads/fff.csv")
+```
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+#Below we are loading in two datasets of Chinese speleothem records
+Sanbao<- read.csv("./Data/Sanbao.csv")
+Hulu<-read.csv("./Data/Hulu.csv")
+```
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+#Next we need to change some things around in the Sanbao dataset to make it easier to merge with the Hulu dataset
+Sanbao<-mutate(Sanbao, Stal = "Sanbao")  
+Sanbao<- Sanbao %>%  select("Stal", "Age", "o") #Re-ordering the columns to match the Hulu cave data set
+
+China_Stals<-bind_rows(Hulu, Sanbao) #Binding the Hulu and Sanbao datasets together via a simple stack 
+```
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+# Below we are loading in and cleaning up a record from Lebanon and Cyprus
+Leb_Stal<- read.csv("./Data/Lebanon.csv")
+Leb_Stal<- mutate(Leb_Stal, Stal = "Lebanon") #Adding a column that names where the Stal is from
+Leb_Stal<- rename(Leb_Stal, c  =  d13C_Measurement)
+Leb_Stal<- rename(Leb_Stal, o  =  d18O_Measurement)
+
+Cy_Stal<- read.csv("./Data/Cyprus.csv")
+Cy_Stal<-mutate(Cy_Stal, Stal = "Cyprus")
+Cy_Stal<- filter(Cy_Stal, Age >= "163006.4")
+
+Cy_Leb<-bind_rows(Leb_Stal, Cy_Stal)
+```
+
+## Motivation for Study and Scientific Questions
+
+  The study of Earth’s past climates, known as paleoclimatology, is a discipline of immeasurable value to the modern era. The vast majority of Earth’s climatic history has not been recorded by humans, leaving many mysteries to the examination of paleoclimatologists. Nature has been recording climatic variations for hundreds of thousands of years, extending beyond our species time on Earth. Scientists are able to examine the climate of the past by looking at different climate proxies. 
+
+  Many mysteries of how climate has functioned and fluctuated in the past have been uncovered in the relatively short existence of this discipline. For example, during the Last Glacial Period, millennial cycles of rapid and substantial warming followed by slow and equally substantial cooling have been discovered in records from ice cores in Greenland [(Dansgaard et al., 1984)](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/GM029p0288). Evidence of these Dansgaard–Oeschger events have been found globally and their effect on climate in those localities is still being researched. Despite all of the current research the cause of D/O events remains unclear, however, evidence points to thermohaline circulation in the North Atlantic as well as ice sheet growth and stability as leading drivers ([Bond et al., 1999](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/GM112p0035); [Zhang et al., 2014](https://pubmed.ncbi.nlm.nih.gov/25119027/)). Coinciding somewhat with D/O events are Heinrich or H events, which are events of glacial debris deposition on the ocean floor in the North Atlantic ([Bond et al., 1999](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/GM112p0035)). These events likely occurred at the climax of glaciation, where ice sheets built up to the point where they were unstable and mass calving events ensued ([Bond et al., 1999](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/GM112p0035); [Zhang et al., 2014](https://pubmed.ncbi.nlm.nih.gov/25119027/)). D/O and H events show the importance of studying paleoclimate to elucidate the mysteries of the past. 
+
+  Paleoclimatology is not only pertinent because of the various unsolved mysteries of the past but also because of the imminent vulnerability of our modern climate. The study of past climatic change has told, and will continue to tell, scientists much about the changes and associated risks the Earth faces today. Understanding large climatic fluctuations is what has helped us establish that contemporary climate change is more than just natural forcing caused by changes in incomming solar radiation. Understanding how vulnerable areas responded to large scale fluctuations in the past may help us predict how the area will change in the future. It is clear that paleoclimatology is a valuable study and arguably, the most valuable area of study in this discipline is in the Peruvian Andes. The location of the Central Peruvian Andes is key as weather is driven by moisture and air traveling from the east. 65% of annual precipitation in the central Andes occurs during the South American Seasonal Monsoon or SASM, which is driven primarily by summer insolation in the Southern Hemisphere Tropical Atlantic ([Burns et al., 2019](https://www.nature.com/articles/s41598-018-37854-3)). Stronger austral summer insolation leads to increased monsoon intensity, a relationship that is crucial to understanding the paleoclimate of Peru. SASM intensity will alter the  δ^18^O value of rainfall. δ^18^O is a ratio between the two most commonly occurring isotopes of oxygen ,^18^O and ^16^O. δ^18^O is relative to a standard, which is the Vienna Pee Dee Belemnite (VPDB) in the case of most carbonate minerals. If a sample has a large content of ^18^O it compared to this standard, it has a positive δ^18^O. Conversely if a sample has a small content of ^18^O compared to VPDB, it has a negative δ^18^O. Precipitation typically has a negative δ^18^O, but differences in how negative these values are can arise from changes in SASM intensity. When the SASM intensity increases, rainout of heavier isotopes of oxygen (^18^O) occurs, thus rainfall in the central Andes will have a more negative δ^18^O value ([Burns et al., 2019](https://www.nature.com/articles/s41598-018-37854-3)). The opposite relationship occurs when SASM intensity decreases and the amount of precipitation is lower and we will see a less negative δ^18^O value in precipitation.
+  
+  ![**Figure showing the seasonal variation of the ITCZ and it's effect on precipitation in South America through the SASM. Taken from Flantuna et. al., (2016).**](./Figures/Picture9.png)
+
+
+### What is a speleothem and why use them? 
+
+  Caves form in carbonate bedrock as slightly acidic rainwater falls and percolates through the substratum, dissolving carbonate rock as it travels. Huagapo and Pacupahuain Caves are two caves that formed in such a manner in the central Peruvian Andes ([Kanner et al., 2012](https://www.science.org/doi/10.1126/science.1213397), [Burns et al.,2019](https://www.nature.com/articles/s41598-018-37854-3)). Speleothems are a carbonate structure that form when water that has percolated through soil and rock drips into a cave, where calcium carbonate (CaCO~3~) from the water precipitates into a solid ([Wendt et al., 2021](https://pubs.geoscienceworld.org/msa/elements/article-abstract/17/2/87/605868/Uranium-Thorium-Dating-of-Speleothems?redirectedFrom=fulltext)). The CaCO~3~ records the isotopic values of oxygen in the rain water at the time of precipitation, which means that when sampled and measured, one can extrapolate a δ^18^O value of precipitation at the time of calcification ([Johnson, 2021](https://pubs.geoscienceworld.org/msa/elements/article-abstract/17/2/93/605862/Tales-from-the-Underground-Speleothem-Records-of)). Speleothems also have the ability to be dated with high precision using uranium-thorium dating, creating small age constraints ([Wendt et al., 2021](https://pubs.geoscienceworld.org/msa/elements/article-abstract/17/2/87/605868/Uranium-Thorium-Dating-of-Speleothems?redirectedFrom=fulltext)). Using known relationships between precipitation and oxygen isotopes in CaCO~3~ as well as high resolution U-Th dating, paleoclimatologists can use speleothems as a powerful climate proxy.
+
+  ![**Figure showing the generalized speleothem formation process. Taken from (Fleitmann et. al, 2004).**](./Figures/Picture1.png)
+
+```{r message = FALSE, echo = FALSE, warning = FALSE, results='hide', include = FALSE}
+#loading in packages needed for the map creation
+library(elevatr)
+library(AOI)
+library(basemaps)
+library(tmap)
+library(rnaturalearth)
+library(sf)
+```
+
+```{r message = FALSE, echo = FALSE, warning = FALSE, results='hide', include = FALSE}
+loc2use <- aoi_get(x = list( "Parque Montoneros, Pr", 30, 30) ) #assigns a location and area around the location to use
+elevation <- get_elev_raster(loc2use, z = 12, clip = "bbox") #gets the elevation data for the space in the loc2use
+elev_contours <- raster::rasterToContour(elevation) #turns the elevation data into contours 
+raster_bm<- basemap_raster(elev_contours, map_service = "osm", map_type = "topographic") #gets a basemap from the basemap function that is clipped to the same bounding box as the elevation data
+```
+
+```{r message = FALSE, echo = FALSE, warning = FALSE, results='hide', include = FALSE}
+map<-  tm_shape(raster_bm) + #adds layer w/ basemap
+  tm_rgb() + 
+  tm_shape(elev_contours) + #adds layer with elevation contours 
+  tm_iso() + 
+  tm_scale_bar(position = c("LEFT", "BOTTOM"), bg.color = "white") #adds a scale bar to the bottom left of the map
+```
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+PPSF<-  mutate(SA_Stals, Lat = case_when(Stal == "19-11" ~ -11.24, 
+                                                      Stal == "Burns" ~ -11.27,
+                                                      Stal == "Sinon" ~ -11.27))
+ #Adds a column with the latitude value of the cave the speleothem was collected from                                             
+```
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+PPSF<- mutate(PPSF, Long = case_when(Stal == "19-11" ~ -75.82, 
+                                                      Stal == "Burns" ~ -75.79,
+                                                      Stal == "Sinon" ~ -75.79))
+#Adds a column with the longitude value of the cave the speleothem was collected from   
+```
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+sf_caves<- st_as_sf(PPSF, coords= c("Long", "Lat")) #Converts the data frame into a shape file 
+```
+
+```{r message = FALSE, echo = FALSE, warning = FALSE, results='hide', include = FALSE}
+map <- map + tm_shape(sf_caves) + 
+  tm_dots(col = "Stal", palette = c("red", "blue"), size = 3, legend.show = FALSE) #merges a new layer that has the cave locations as dots to the map made in the previous step
+```
+
+```{r message = FALSE, echo = FALSE, warning = FALSE, results='hide', include = FALSE}
+#Now I want a map of Peru to show where in the world we are
+peru<- tm_shape(ne_states(country = "peru")) + #uses the naturalearth package to get the shape file for all of the Peruvian districts
+  tm_borders() +
+  tm_polygons(col = "lightgrey") + # sets the fill of Peru to light grey
+  tm_scale_bar(position = c("LEFT", "BOTTOM")) + 
+  tm_compass(type = "4star", position = c(0.07,0.1)) #Adds a compass to the bottom left
+```
+
+
+
+  In May of 2019, Professor Donald Rodbell and Professor David Gillikin collected twelve speleothems from Huagapo and Pacupahuain Caves as part of a thesis project. Since then, eleven speleothems have already been cut, polished, and sampled for U-Th dating. In this document, I will present the methods used to extract a paleoclimate record from speleothem 19-11, which was collected in Pachupahuain Cave. I will then examine the 19-11 record in three different contexts: the record alone, the record in comparison to regional proxies, and the record in comparison to global proxies. 
+  
+![**Map of the study area within Peru. Location of the two caves, Huagapo (blue with H) and Pachpahuain (red with P) are indicated by dots.**](./Figures/thesismap copy.png)
+
+## How do you extract a record from a speleothem? 
+
+### Uranium-Thorium Dating
+
+  The most crucial part of a climate record from a speleothem is the age model. You need to be able to assign the oxygen and carbon isotopes to dates in time. We can get these dates from Uranium-Thorium Disequilibrium dating. U/Th dating relies on the complicated ^238^U decay chain, which can be simplified into a 3-step chain: ^238^U decays into ^234^U, which decays into ^230^Th ([Wendt et al., 2021](https://pubs.geoscienceworld.org/msa/elements/article-abstract/17/2/87/605868/Uranium-Thorium-Dating-of-Speleothems?redirectedFrom=fulltext)). 230Th itself is a radioactive isotope, with a half-life of 75,590 years. This means that the U/Th dating method involves a disequilibrium relationship, as concentrations of ^238^U and ^230^Th will move towards a state of secular equilibrium (where the activity of both of the isotopes are equal) ([Wendt et al., 2021](https://pubs.geoscienceworld.org/msa/elements/article-abstract/17/2/87/605868/Uranium-Thorium-Dating-of-Speleothems?redirectedFrom=fulltext)). Under oxidizing conditions at the Earth’s surface and shallow depths of the crust, Uranium is soluble while Thorium is highly insoluble. Thus, water that percolates through the Earth will dissolve bedrock and pick up Uranium but not Thorium. When the speleothem forms, it should have a Th/U ratio that is close to zero. Over time, the ratio of Th/U will move towards secular equilibrium (where the ratio =1) at a rate that is defined by the half-lives of the isotopes involved ([Wendt et al., 2021](https://pubs.geoscienceworld.org/msa/elements/article-abstract/17/2/87/605868/Uranium-Thorium-Dating-of-Speleothems?redirectedFrom=fulltext)). With the rate of movement towards secular equilibrium known, an age can be calculated using concentrations of ^238^U and ^230^Th in a powdered sample of the speleothem calcite. These powder samples are strategically collected, usually within notable growth banding, to allow for the closest matching to adjacent geochemical records. 
+
+#### Extracting U/Th dates 
+
+  In 2020, Laura Picarillo (Class of 2020), cut 19-11 down its growth axis, polished the speleothem, and then used a handheld Dremel 300, with a 1/8-inch diameter shank bit, to sample the top and base for U/Th disequilibrium dating. For this study, 23 additional U/Th samples, each weighing approximately 60 mg, were taken on speleothem 19-11. A majority of these samples were taken between the initial U/Th samples collected by Laura Picarillo’ 20, while an additional sample was taken above the upper most of the samples taken by Laura Picarillo’ 20. A subset of the U/Th samples were taken on the same growth laminae to test the replicability of ages. All of these samples were taken using a Dremel 300 and 1/8-inch diameter shank bit, which was cleaned with dionized water between sampling. A Dremel 220-01 Workstation Press was also utilized, which allowed for added stability and more precise sampling between growth laminae. Special consideration was taken to sample at important points where hiatuses may be present given changes in the speleothem’s morphology. U/Th samples were sent to the University of Minnesota Isotope Laboratory, where they were analyzed and dated using a Thermo-Finnigan Neptune inductively coupled plasma-mass spectrometer (ICP-MS), using procedures described in [Cheng et al. (2013)](https://www.sciencedirect.com/science/article/pii/S0012821X13001878). 
+
+### Carbon and Oxygen Isotopes
+
+  Stable isotopes of oxygen provide a powerful proxy for hydrologic processes, especially in the South American Tropics. Oxygen isotopes in speleothems record the isotopic value of the rainwater that has percolated through carbonate bedrock, forming the speleothem being sampled. In stable isotope studies, the atmosphere and oceans are regarded as sinks for hydrogen and oxygen isotopes. The oceans are a well-mixed sink, with a ratio of ^16^O isotopes to ^18^O isotopes. A  δ^18^O value can be calculated using the measured ratio of these two isotopes. When water evaporates from the oceans, ^16^O will evaporate with slightly greater ease than ^18^O, which results in water vapor that has a comparatively lower δ^18^O than the ocean ([Johnson, 2021](https://pubs.geoscienceworld.org/msa/elements/article-abstract/17/2/93/605862/Tales-from-the-Underground-Speleothem-Records-of)). This change in δ^18^O is known as fractionation and can occur in a number of ways. 
+
+  The primary relationship between rainfall and oxygen isotopes is described by Rayleigh Distillation. This process involves the progressive lowering of  δ^18^O values in atmospheric water vapor as the air mass moves away from the water source ([Johnson, 2021](https://pubs.geoscienceworld.org/msa/elements/article-abstract/17/2/93/605862/Tales-from-the-Underground-Speleothem-Records-of)). This process is essentially the opposite of the fractionation in evaporation. Here the 18O isotope will precipitate with slightly greater ease than the ^16^O isotope, resulting in comparative lowering of the δ^18^O of the remaining atmospheric water vapor ([Johnson, 2021](https://pubs.geoscienceworld.org/msa/elements/article-abstract/17/2/93/605862/Tales-from-the-Underground-Speleothem-Records-of)). In the case of Tropical South America, this water source is ultimately the Atlantic Ocean, but transpiration from the Amazon Basin also provides atmospheric water vapor that eventually precipitates over the Andes (Espinoza et. al., 2020). Lai et. al. (2006), showed that while transpiration had an effect on signals of atmospheric δ^18^O on the diurnal timescale, transpiration had little effect on timescales longer than a day.  Also, as air masses move up altitude they cool and contract, which results in further rainfall and lowering of the atmospheric water vapors  δ^18^O value ([Johnson, 2021](https://pubs.geoscienceworld.org/msa/elements/article-abstract/17/2/93/605862/Tales-from-the-Underground-Speleothem-Records-of)). Together, the movement of moisture away from its source and up in altitude results in the progressive lowering of the  δ^18^O value of rainfall away from the source of water. Thus, rainfall 1 mile from the Tropical Atlantic should generally have higher δ^18^O values than rainfall 10 miles from the Tropical Atlantic.
+  
+  ![**Figure showing Rayleigh Distillation During an Interglacial Period.**](./Figures/interglacial.png)
+
+
+  There is another more abstract and complicated process that also controls the δ^18^O value of precipitation across Tropical South America. This process is known as the “Amount Effect” and is based on the simple, yet elusive to observe, principal that higher rates of rainfall results in greater rainout of 18O and subsequent depletion of the  δ^18^O of subsequent rainfall ([Kanner et al., 2012](https://www.science.org/doi/10.1126/science.1213397)). Current literature is filled with impactful discussions on the amount effect as it seems elusive to find direct evidence for on smaller timescales [(Vuille and Werner, 2005)] (https://link.springer.com/article/10.1007/s00382-005-0049-9). However, previous researchers have attributed longer term changes in  δ^18^O values to changes in the intensity of SASM. The general idea being that periods of greater SASM intensity result in greater rainfall rates and lower  δ^18^O values, with the opposite occurring when the SASM is weaker ([Kanner et al., 2012](https://www.science.org/doi/10.1126/science.1213397)). I will follow in the precedent set by these previous researchers and largely attribute decreases in δ^18^O values of rainfall to strengthening of the SASM, and attribute increases in  δ^18^O of rainfall to weakening of the SASM. 
+  
+ ![**Figure Showing ther combined effects of Rayleigh Distyillation and the Ammount effect during a glacial period.**](./Figures/glacial.png)
+
+
+  Carbon Isotopes are another proxy that can be used to interpret hydrologic fluxes. Unlike  δ^18^O, carbon isotopes are not a direct recorder of precipitation values and instead record a number of processes that are themselves controlled by precipitation rates. Previous work often ignores δ^13^C due to its complicated nature, but researchers have established three major controls on δ^13^C in speleothems. Speleothems get much of their carbon from soils that overlie the bedrock and caves they form in. Carbon is trapped in these soils as CO~2~, which is picked up by water percolating through the ground [(Novello et. al., 2021)](https://www.sciencedirect.com/science/article/pii/S0277379121000299). Vegetation type and amount is a major control of this CO2, making it also a major control of δ^13^C in speleothems. Vegetation on Earth’s surface is split into 2 main groups; C3 and C4 plants (a third group known as CAM is excluded from this discussion due to its rarity in tropical environments). These two groups of plants fractionate carbon in different ways, with C3 plants having a greater “preference” for 12C and typically having more negative δ^13^C values (-28‰) than C4 plants (-14‰) ([Johnson, 2021](https://pubs.geoscienceworld.org/msa/elements/article-abstract/17/2/93/605862/Tales-from-the-Underground-Speleothem-Records-of)). Thus, shifts in the type of vegetation above a cave, due to hydrologic and climatic changes, could have an effect on the δ^13^C values of speleothems growing in those caves ([Johnson, 2021](https://pubs.geoscienceworld.org/msa/elements/article-abstract/17/2/93/605862/Tales-from-the-Underground-Speleothem-Records-of)). This relationship requires that the bedrock system is “open”, meaning water and its dissolved contents are in contact with the soil. An open system is one endmember of a continuum, with the other extreme being a closed system, where the bedrock is closed off from the soil and the speleothem δ^13^C is a product of solely bedrock influences[(Novello et. al., 2021)](https://www.sciencedirect.com/science/article/pii/S0277379121000299). Most natural cave systems occupy something in between both of these systems and are regarded as intermediate systems, which may change in their balance of closed vs open as a result of hydrologic and climatic fluctuations [(Novello et. al., 2021)](https://www.sciencedirect.com/science/article/pii/S0277379121000299). Its presumable that many caves in tropical South America fluctuated in this open-closed continuum, with the major control being the hydrologic conditions in the region. 
+
+  One more important control on the δ^13^C value in speleothems is a process known as prior calcite precipitation or PCP. PCP involves the degassing of CO2 from percolating water, which will preferentially remove 12C from solution and increase the δ^13^C value of the speleothem ([Johnson, 2021](https://pubs.geoscienceworld.org/msa/elements/article-abstract/17/2/93/605862/Tales-from-the-Underground-Speleothem-Records-of)). The process of PCP is more common in drier conditions, where water and its dissolved contents have more time to interact with bedrock. During wetter conditions, PCP is limited as a result of the higher rates of water percolation due to bedrock and soil saturation ([Johnson, 2021](https://pubs.geoscienceworld.org/msa/elements/article-abstract/17/2/93/605862/Tales-from-the-Underground-Speleothem-Records-of)). PCP is something that also affects the ratio of Mg/Ca and Sr/Ca in speleothems, which is another chemical component that can be sampled and measured. Mg/Ca and Sr/Ca ratios should increase during drier periods dominated by PCP as a result of the loss of Ca to said calcite precipitation ([Johnson, 2021](https://pubs.geoscienceworld.org/msa/elements/article-abstract/17/2/93/605862/Tales-from-the-Underground-Speleothem-Records-of)). A comparative record between a speleothems Mg/Ca and Sr/Ca ratios vs its δ^18^O could help determine if the sample is recording precipitation variation. 
+
+  ![**Figure showing some of the controls on the δ^13^C values of speleothem calcite. Taken from (Johnson, 2021).**](./Figures/Carbon.png)
+
+  Researchers have established a generally positive relationship between δ^13^C and  δ^18^O in speleothems across Tropical South America [(Novello et. al., 2021)](https://www.sciencedirect.com/science/article/pii/S0277379121000299). This is believed to be a result of high rainfall rates (lowering  δ^18^O) that decrease PCP, keep the bedrock system open, and promote C3 vegetation growth. All three of these factors should theoretically decrease the δ^13^C value of speleothem calcite during wetter periods and increase δ^13^C values during drier periods. That being said,[Sinon  (2021)](https://digitalworks.union.edu/steinmetzsymposium/steinmetz_2021/oralpresentations/219/). showed that there can be periodic decoupling of this relationship. Decoupling would suggest that the relationship between δ^18^O and δ^13^C is not as simple as previously discussed. We can use the understanding of different drivers of δ^18^O and δ^13^C flux to try to better understand any potential decoupling on a case-by-case level. 
+
+#### Extracting Carbon and Oxygen Records 
+
+  Using a fine point Sharpie 4 transects were drawn on speleothem 19-11, taking care to follow a path roughly parallel to the speleothem’s growth axis. The Union College Stable Isotope Lab’s New Wave Research micromill was then used to sample powder for carbon and oxygen isotopes. The drill took 2 passes at 150 μm depths to create a 300 μm deep hole, producing somewhere between 0.70-0.80 μg of sample powder. This sample powder was collected using two surgical scalpels, taking care not to lose powder to human error. When notable human error did occur, a sample was re-drilled directly adjacent to the sample ruined by the error and within the same growth laminae. Each sample was spaced approximately 350 μm away from each other, with slight overlap occurring between these sample holes. The slight overlap between samples allows for a high resolution and continuous stable isotope record. In total, 434 samples were drilled to cover all 4 transects, with some overlap between samples at the beginning and ends of some of the transects. 
+
+  The sample powders were analyzed for their δ^13^C and  δ^18^O values on the Union College Stable Isotopes Lab’s Thermo Gas Bench II, which is connected to a Thermo Delta Advantage mass spectrometer run in continuous flow mode. Values for  δ^18^O and δ^13^C are both reported in reference to the Vienna Pee Dee Belemnite (VPDB) standard. NBS-18, IAEA 608, and LSVEC were the reference standards used for the carbon and oxygen analysis. The following values were used for δ^13^C and δ^18^O respectively: IAEA 603: +2.46‰, -2.37‰, NBS-18: -5.014‰, -23.2‰, and LSVEC: -46.6‰, -26.7‰. The reproducibility (1σ) for δ^13^C is ± 0.04‰ (VPDB) and δ^18^O is ± 0.06‰ (VPDB), based on 26 IAEA 603 standards over 7 analytical sessions.
+	
+  These stable isotope values (along with their associated depths in relation to the top of 19-11 were then combined with the U/Th ages and depths in the StalAge R script, produced by [Scholz and Hoffmann (2011)](https://www.sciencedirect.com/science/article/pii/S1871101411000094). After screening for outliers, the StalAge script creates a line of best fit through the age dates using a Monte-Carlo simulation; the program then assigns ages to given depths based on the model it produces. Each stable isotope value can then be assigned an age value given its depth in relation to a common datum at the top of 19-11. 
+
+## Results and Discussions
+
+### Age Model
+
+  The StalAge code was run three times using the most recent U/Th age dates, with the exception being the use of the two end member ages extracted by Laura Picarillo '20. The difference between the three ages is the use of different ages at the end of the record. With the green line representing the use of the 159 ka age, the red line representing the use of the 169 ka age, and the black line representing the use of both ages. 
+
+  Currently, the largest remaining question is the validity of the age models and which one should be "trusted" the most. We trust these dates despite small "reversals" in their linear progression up the speleothem. The errors remain fairly low and samples that showed signs of Thorium contamination were not included in these models. The next few weeks will be spent trying to sort out the differences between the various age models that can be drawn through these age dates. As of now, the model that uses both ages (the black line) yields the best match, in terms of the isotope time series, to the record from Burns and Sinon. Thus, we will be using this model for the remainder of this discussion. 
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+#Below are various lables that are helpful to store as objects so I dont have to format them all the time 
+ylabel <- expression(delta^{18} * O ~ "(‰ VPDB)")
+xlabel <- "Age (yr BP)"
+clabel<- expression(delta^{13} * C ~ "(‰ VPDB)")
+clasticlabel<- expression("Lake Junin Clastic Flux" (gm/cm^{2}/yr))
+insolabel<- expression("11S-11N Jan" (W/m^2))
+```
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+ages<-read.csv("./Data/Ages.csv") #Recalls a CSV file with the U/Th ages for my speleothem
+```
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+oldages<- filter(ages, age == 159595 | age == 137726 | age == 147163 | age == 159526 | age == 156376 | age == 160599 | age == 156376 | age == 169090)
+#filters ages that were taken in the first sampling run and assigns them to another object, I may or may not do something with this
+
+Sin<- filter(ages, age == 170637 | age == 168206 | age == 166357 | age == 162851 | age == 151892 | age == 158427 | age == 159142)
+#Filters the ages from Sinon and adds the to an object
+
+Burn<- filter(ages, age == 170492 | age == 167356 | age == 164285 | age == 161097 | age ==  158519 | age == 154926 | age == 152125 | age == 150830 | age == 149975 | age == 165064 | age == 162889 | age == 160750 | age == 156050 | age == 151233 | age == 148510 | age == 147053 | age == 144946 | age == 143732 | age == 139439) 
+#filters ages from Burns and adds them to an object
+```
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+dep<-read_csv("./Data/dep.csv") #Loads in a csv file with the age model spit out byu StalAge
+AM<- ggplot() + 
+  geom_line(data = dep, aes(x = AgeHy, y = Depth)) + #creates a line using the first age model
+   geom_line(data = dep, aes(x = AgeNe, y = Depth), color = "green") + #creates a line using the youngest age model
+  geom_line(data = dep, aes(x = AgeO, y = Depth), color = "red") + #creates a line using the oldest age model
+  geom_point(data = ages, aes(x = age, y = depth)) + #Plots a set of points of the U/Th age dates used in the first age mode
+  geom_errorbar(data = ages, aes(xmin = e2, xmax= e1, y = depth), width = 2) + #Adds an error bar to the U/Th ages
+  scale_y_reverse() + #Reverses y axis
+  theme(aspect.ratio = 1.5/1, #Sets a nice aspect ratio of the printed graph
+        panel.grid.major = element_blank(), #removes major grid lines
+        panel.grid.minor = element_blank(), #removes the minor grid lines
+        panel.background = element_blank(), #removes and background to the inside of the graph
+        panel.border = element_rect(colour = "black", fill=NA, size=1), #Creates a rectangular border that is black and has a width of "1"
+        axis.text.y = element_text(color = "black"), #Adds black colored text to the y axis
+        axis.title.x = element_text(color = "black"), #Adds black colored title to the x axis
+        axis.text.x = element_text(color = "black"), #Adds black colored text to the x axis 
+        legend.title = NULL) + #removes legend title, it keopt showing up and was annoying 
+ylab("Depth (mm)") + xlab(xlabel)
+      
+AM
+```
+
+```{r}
+ggsave("model.png")
+```
+
+### Carbon and Oxygen Relationship
+
+  Given the regional controls on carbon and oxygen isotopes, one would expect the two isotope sytem=stems to evlove contemporaneously. In other words, increased rainfall should decrease δ^18^O and also lead to on increase in respired carbon, a decrease in PCP, and greater connection between the sil and cave. All of this should translate to a decreased d13C alongside decreased δ^18^O. That being said, [Sinon  (2021)](https://digitalworks.union.edu/steinmetzsymposium/steinmetz_2021/oralpresentations/219/) showed that this relationship is not straightforward in the Huagapo record. The ambiguity in the carbon and oxygen isotope relationship was attributed to more complicated dynamics between the amount of time the drp water is interacting with the cave air and the amount of CO2 in the cave. These relationships can quickly become quite complicated and not many studies address these drivers. 
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+SA_Stals_Inso %>% 
+  filter(Stal == "19-11") %>% #Filters the data set so we are only looking at my record
+  ggplot() + 
+  geom_point(aes(x = o, y = c)) + #plots oxygen on the x axis and carbon on the y axis
+  xlab(ylabel) + #uses one of the labels from before
+  theme(aspect.ratio = 1/2, 
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),  
+        panel.background = element_blank(), 
+        panel.border = element_rect(colour = "black", fill=NA, size=1),
+        axis.text.y = element_text(color = "black"),
+        axis.text.x = element_text(color = "black")) + 
+  scale_y_continuous(labels = c(-6.5, -6, -5.5, -5, -4.5, -4, -3.5))+ #Set the lables manually so that it looks neater 
+  scale_x_continuous(breaks = c(-18.5, -18, -17.5, -17, -16.5, -16, -15.5, -15, -14.5), #Sets breaks and labels manually so they look neater
+                     labels = c(-18.5, -18, -17.5, -17, -16.5, -16, -15.5, -15, -14.5))+
+  ylab(clabel) #adds one of the labels from before 
+```
+
+  When we compare the oxygen and carbon isotopes we can see that there is no clear negative or positive correlation between the two. This may indicate that the more complicated drip water and cave atmosphere conditions are driving a positive relationship at different periods of time. This graph could be showing multiple positive and negative relationships being plotted on top of each other, thus we do not see a clear signal of either. One way I looked combat this ambiguity was to try and see if there is any temporal variation in the oxygen and carbon relationship. 
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+misBreaks %>% 
+  filter(Stal == "19-11") %>% 
+  ggplot() + 
+  geom_point(aes(x = o, y = c, color = Age_cat)) + #Color is based on MIS sub-stage
+  geom_smooth(aes(x = o, y = c), method = lm, color = "black")+ 
+  xlab(ylabel) + 
+  theme(aspect.ratio = 1/.75,
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),  
+        panel.background = element_blank(), 
+        panel.border = element_rect(colour = "black", fill=NA, size=1),
+        axis.text.y = element_text(color = "black"),
+        axis.text.x = element_text(color = "black"), 
+        legend.title = NULL) + 
+  scale_y_continuous(labels = c(-6.5, -6, -5.5, -5, -4.5, -4, -3.5))+ 
+  scale_x_continuous(breaks = c(-18.5, -18, -17.5, -17, -16.5, -16, -15.5, -15, -14.5), 
+                     labels = c(-18.5, -18, -17.5, -17, -16.5, -16, -15.5, -15, -14.5),
+                     guide = guide_axis(n.dodge = 2))+
+  scale_color_manual(values = c("red", "blue", "green4"))+ #It gave the sub-stages really gross colors so I set my own manually 
+  ylab(clabel) + 
+  facet_wrap("Age_cat") #Facets by MIS sub-stage
+```
+
+  Here I have divided the oxygen and carbon relationship into three so-called sub-stages that lie withing MIS 6. These sub-stages were defined by Chinese loess sequences and are roughly coincident with changes in insolation forcing. The sub-stages get older with age as the go through the alphabet. In other words, MIS 6a is the youngest of these periods and MIS 6c is the oldest. 
+
+  Before interpreting this data it is important to note that the age model is still not complete and some of the data in MIS 6c may belong to the older MIS 6d sub-stage. During MIS 6a there appears to be a slight negative correlation between oxygen and carbon, however, the density of data points is low and there is a lot more variation in the carbon isotopes compared to the oxygen isotopes. There is clearly a change in the relationship between MIS 6b and MIS 6c. It would appear that there is a negative correlation between the two isotope systems in MIS 6b and no correlation in MIS 6c. The lack of correlation in MIS 6c may be down to the age model, thus I will need to look into this relationship when the age model becomes finalized. 
+
+  While the correlation in MIS 6b seems to be fairly robust, it is still important to note that division of this data by MIS sub-stage was arbitrary and there could still be mixing of positive and negative correlations within all of these sub-stages. A negative relationship between oxygen and carbon isotopes is the opposite of what we would expect given the major controls on d13C in speleothems. Currently, there is no elegant answer as to why 19-11 has the opposite from expected relationship. In the future I will look at this relationship some more, especially seeing if other controls like temperature or speleothem growth rate may play a role. Most studies tend to ignore carbon isotopes because of their complexity, as of now I will follow in their footsteps and take a closer look at the oxygen time series.
+
+### Oxygen Time Series
+
+
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+mainFigMid<-
+  ggplot()+
+ geom_line(data= SA_Stals_Inso, aes(x= AgeHy, y = o, color = Stal)) + #Creates lines with the different speleothem records and assigns different colors to them. I had to recall the dataframe by name because I am using data from multiple data frames 
+  geom_line(data = SA_Stals_Inso, aes(x = Age, y = (Ins/-6.4), group = Stal), color = "black") + #Adds the insolation and divides the insolaytion values by -28 so that they are in line with the oxygen isotope data
+ geom_point(data = ages, aes(x = age, y = o), color = "#BF1A2F") + #Adds the U/Th ages for 19-11 as points at the bottom of the graph, this is kind of messy but standard practice in paleoclimate
+  geom_errorbar(data = ages, aes(xmin = e2, xmax= e1, y = o), width = .2) + #Adds error bars to those U/Th ages
+  geom_point(data = Sin, aes(x = age, y = o), color = "#F7D002") + #Adds the U/Th ages for Sinon as points at the top of the graph
+  geom_point(data = Burn, aes(x = age, y = o), color = "#454E9E") + #Adds the U/Th ages for Burns as points at the top of the graph
+  scale_y_continuous(sec.axis = sec_axis(~.*-6.4, name = insolabel))+ #multiplies the values and scale for the secondary y axis by -28, the same value I divided insolation by, this makes it so that the secondary y axis is displaying the true values of the insolation
+  theme(aspect.ratio = 1/2, 
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),  
+        panel.background = element_blank(), 
+        panel.border = element_rect(colour = "black", fill=NA, size=1),
+        axis.text.y = element_text(color = "black"),
+        axis.title.x = element_text(color = "black"),
+        axis.text.x = element_text(color = "black"), 
+        legend.title = NULL, 
+        legend.key = element_rect(fill = "transparent")) + 
+ scale_color_manual(values = c("#BF1A2F","#454E9E", "#F7D002"))+ #These are just nice colors
+  xlim(c(135000, 171000)) + #Sets the limits for the ages on the x axis
+  ylab(ylabel) 
+mainFigMid
+#touch up in photoshop
+```
+
+![](./Figures/MainFigA.png)
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+mainFigMid<-
+  ggplot()+
+ geom_line(data= SA_Stals_Inso, aes(x= AgeHy, y = o, color = Stal)) + #Creates lines with the different speleothem records and assigns different colors to them. I had to recall the dataframe by name because I am using data from multiple data frames 
+  geom_line(data = SA_Stals_Inso, aes(x = Age, y = (JanS/-28), group = Stal), color = "black") + #Adds the insolation and divides the insolaytion values by -28 so that they are in line with the oxygen isotope data
+ geom_point(data = ages, aes(x = age, y = o), color = "#BF1A2F") + #Adds the U/Th ages for 19-11 as points at the bottom of the graph, this is kind of messy but standard practice in paleoclimate
+  geom_errorbar(data = ages, aes(xmin = e2, xmax= e1, y = o), width = .2) + #Adds error bars to those U/Th ages
+  geom_point(data = Sin, aes(x = age, y = o), color = "#F7D002") + #Adds the U/Th ages for Sinon as points at the top of the graph
+  geom_point(data = Burn, aes(x = age, y = o), color = "#454E9E") + #Adds the U/Th ages for Burns as points at the top of the graph
+  scale_y_continuous(sec.axis = sec_axis(~.*-28, name = insolabel))+ #multiplies the values and scale for the secondary y axis by -28, the same value I divided insolation by, this makes it so that the secondary y axis is displaying the true values of the insolation
+  theme(aspect.ratio = 1/2, 
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),  
+        panel.background = element_blank(), 
+        panel.border = element_rect(colour = "black", fill=NA, size=1),
+        axis.text.y = element_text(color = "black"),
+        axis.title.x = element_text(color = "black"),
+        axis.text.x = element_text(color = "black"), 
+        legend.title = NULL, 
+        legend.key = element_rect(fill = "transparent")) + 
+ scale_color_manual(values = c("#BF1A2F","#454E9E", "#F7D002"))+ #These are just nice colors
+  xlim(c(135000, 171000)) + #Sets the limits for the ages on the x axis
+  ylab(ylabel) 
+mainFigMid
+#touch up in photoshop
+```
+  Here we are comparing the record from Speleothem 19-11 (red) to two other records, both of which are from Huagapo Cave. It is clear that all three records have the same general trends in oxygen isotopes. The similarity between the records is the strongest between 135-160 ka. This supports the idea that all three of these records (and both caves) are accurately recording fluctuations in hydroclimate. These changes in oxygen isotopes are likely caused by multiple factors, however, the amount effect is evoked as the strongest of these factors in this region. The broad decreases in δ^18^O likely reflect increased rainfall, which is attributed to a strengthened SASM. Reconstructed inoslation at 10s was plotted against these three cave records and shows nearly identical trends. Note that the axis for insolation is inverted, meaning that higher insolation is attributed to lower δ^18^O. This would seem to corroborate the idea that periods of high insolation are associated with a stronger SASM and increased rainfall. Recall that high insolation in the Southern Hemisphere is associated with insolation lows in the Northern hemisphere, which would translate to increased SST gradient. Thus, it is likely that southern migration of the ITCZ leads to the strengthening of the SASM and increase of the "amount effect" signal. 
+
+  While there is general agreement between the three Peruvian cave records, it is important to address the fact that there is also disagreement between them. A majority of this disagreement may be due to the fact that the age model for 19-11 is still under construction. It is possible that the older end of the 19-11 record is "squished" since we are not directly using the oldest date in the age model. An age model constructed using soley the 169 ka basal age instead of both the 158 and 169 ka ages could stretch the tail end of the 19-11 record. This stretching may then yield a record that more closely matches the other two cave records. Given this explanation, one would be tempted to run the StalAge code with just the 169 ka basal age and use that age model. We did just that but found that the subsequent shift obscured the similarity in the younger parts of the records. In other words, the oxygen record for 19-11 was skewed to the right and no longer closely matched the Huagapo records. In the future I will work on ways to stretch the tail end of the 19-11 record without affecting the middle of the record. 
+
+  We can see a similar disagreement between the Sinon and Burns record, which is even more interesting as they are from the same cave and should be essentially identical. Sinon argued that this was a product of the linear age model that they used in her thesis. This age model technique is far simpler than the StalAge Monte-Carlo techniques. The linear model technique takes U/Th ages an applies a linear (y=mx+b) connection between two U/Th ages. While much simpler, this technique ignores the fact that the speleothem likely didn't grow in a linear fashion. Speleothems tend to have periods of high and low growth, some can even be "flashy" and grow really rapidly and then barely grow at all. It does appear that there is decent agreement between the Sinon model and the Burns record, despite the use of the linear model technique. Given the modeling technique, the fact that some of the major peaks and troughs don't precisely line up is not that alarming and their presence in general shows that the records were recording hydroclimate in a way that was nearly identical. 
+
+  The final point about the mismatch between the records can be attributed to changes in growth rate. Like a cake, there is a long list of ingredients needed to make a speleothem. The most critical ingredient in the speleothem recipe is water. Water is what carries the acids and free ions that interact with the bedrock and ultimately precipitate calcite. Thus, a drop in the amount or pacing of water delivered to the speleothem can lead to a change in the rate of growth. If there is a slow down in the rate of growth than the record may be stretched out like an accordion. It is possible that this is what occurred in the middle (155-150 ka) of the 19-11 record, where the resolution is not nearly as high as the Huagapo records. A decrease in the amount or pacing of water delivered to the speleothem would fit with the hydrologic shifts in this period of time. Note that this period of 155-150 ka is a period of low insolation in Peru, where all of the records show a decrease in SASM intensity. It is possible that this period of time was drier and that less water was making it to 19-11. This proposed moderate aridity may also explain why the Sinon record stopped growing at about 155 ka. Its important to note that there isn't evidence of a decrease in water delivery in the Burns record, thus this period of time and the cause for the change in resolution will be the topic of work in the next few months. 
+
+### A Local Context
+
+  Given the relatively adequate strength of the model that uses both basal ages, I will now explore how the 19-11 and Huagapo records compare to other paleoclimate proxies in this region. 
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+n <- ggplot() + #I chose the name n for no reason but I stuck with it, maybe not the best coding practice but I understand it 
+  geom_line(data= SA_Stals_Inso, aes(x= AgeHy, y = o, color = Stal)) +
+  geom_line(data = SA_Stals_Inso, aes(x = Age, y = (Ins/-6.4), group = Stal), color = "black") +
+  geom_point(data = ages, aes(x = age, y = o), color = "#BF1A2F") +
+  geom_errorbar(data = ages, aes(xmin = e2, xmax= e1, y = o), width = .2) + 
+   geom_point(data = Sin, aes(x = age, y = o), color = "#F7D002") + 
+  geom_point(data = Burn, aes(x = age, y = o), color = "#454E9E") + 
+  geom_rangeframe() +
+  scale_y_continuous(breaks = c(-13, -14, -15, -16, -17, -18, -19), sec.axis = sec_axis(~.*-6.4, name = insolabel)) +
+  scale_colour_manual(values = c("#BF1A2F","#454E9E", "#F7D002")) + 
+  xlim(c(135000, 171000)) + #setting age frame to a shorther period of time so we can zoom in on 19-11 a bit more 
+  ylab(ylabel) +
+  xlab(xlabel) + 
+  theme_tufte() + 
+     theme(aspect.ratio = 1/2, 
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),  
+        panel.background = element_blank(), 
+        axis.text.y = element_text(color = "black"),
+        axis.title.x = element_blank(), #Instead of having a title and text on the x axis I am not leaving them blank, this makes it easier to finish the figures in photoshop
+        axis.text.x = element_blank(),
+        legend.key=  element_rect(fill = "transparent")) 
+```
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+juninFig2<- Jinin_glacial %>% 
+  ggplot() + geom_line(aes(x = Age2, y  = Log.MS), color = "green4")+ 
+  geom_rangeframe() + 
+  theme_tufte() +
+  theme(aspect.ratio = 1/2, 
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),  
+        panel.background = element_blank(),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        legend.key = element_rect(fill = "transparent")) + 
+  xlim(c(135000, 171000)) + 
+  scale_y_continuous(position = "right") +
+  ylab("Junin Magnetic Susceptibility")
+juninFig2
+```
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+tk2Fig<- TC_ms %>% 
+  ggplot() + geom_line(aes(x = Age, y = MS), color = "purple") + 
+  geom_rangeframe() + 
+  theme_tufte() + 
+   theme(aspect.ratio = 1/2, 
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),  
+        panel.background = element_blank(),
+        axis.text.y = element_text(color = "black"),
+        axis.text.x = element_text(color = "black")) +
+   scale_color_manual(values = "green4")+ 
+  ylab("Lake Titicaca Magnetic Susceptibility") +
+  xlab(xlabel)+
+   xlim(c(135000, 171000)) 
+```
+
+```{r}
+sacomp2<- n/juninFig2/tk2Fig #Uses patchwork to stack the last three graphs together
+#finished up in photoshop
+sacomp2
+```
+
+![](./Figures/sacompGI copy.png)
+
+  Here I am comparing the joint speleothem record (top), to a dimensionless measure of glacial strength based on sediment from Lake Junin (middle and green), and a record of magnetic susceptibility of sediment from Lake Titicaca in southern Peru/northenr Bolivia (bottom and purple). Recall from earlier that Lake Junin lies a few km northwest of the two caves. 
+
+  Lake Junin is in a prime location to receive sediment influx from glacial and fluvial systems that surround it. Significant work has been done in coring the lake to look at changes in the sedimentary sequence over time. Using various physical and geochemical attributes of individual soil layers, researchers have been able to construct what is known as a glaciation index. This is essentially a unit less measurement that combines various traces of glacial activity. For example: increases in concentrations of titanium, decreases in organic material, and increases in clastic material are all indicative of increased glacial activity and erosion of material into the lake. When these tracers align to indicate periods of increased glacial activity, the glaciation index become more positive. Conversely, when the tracers align to indicate that there is a decrease in glacial activity, the glaciation index decreases and may even become negative. 
+
+  Lake Titicaca records paleoclimate in a similar fashion as Lake Junin, with the major difference being the more southerly location and larger size of Lake Titicaca. A decent recorder of sediment derived from glacial erosion is magnetic susceptibility, which is simply a measure of the magnetic potential of a given layer of sediment. It is believed that periods of high glacial erosion should input more magnetic material into the lake. It is important to note that this is an indirect indicator of glaciation as there is more nuance to the relationship between magnetic flux and glacial erosion. 
+
+  We can observe that there appears to be a general relationship between the Titicaca and Junin records that indicates a period of weaker glaciation, possibly even glacial retreat, during the middle portion of the record. There is however a disagreement on when this decreased glaciation occurs and for how long it lasts. The Titicaca record is indicating a decrease in glaciation from about 155-150 ka, meanwhile, the Junin record indicates an increase in glaciation from 155-150 ka. The Junin record doesn't show evidence of decreased glaciation until closer to 150 ka. This may be due to the lower resolution and accuracy of age models in deeper sediment cores. The Junin core is dated using U/Th dating of authentic carbonate material in the sedimentary sequence. There is usually a low density of datable material in the Junin sediment and being able to accurately tie ages together is difficult. 
+
+  If we take possible age model issues into account and the two lake records into our understanding of the cave records, we begin to see a trend of decreased glaciation during drier intervals in the Andes. This relationship makes intuitive sense, you need precipitation in order for glaciers to grow. Despite the fact that lower insolation at this period of time indicates colder conditions, the lack of sufficient moisture input likely limited the growth and expansion of glaciers. It may even have been so dry that the usual ablation (melting) that occurs during warmer months outpaced the usual glacial growth that occurs in colder months. Ablation outpacing growth leads to glacial retreat, which may explain the rapid dip in the Junin glaciation index record. Lake Titicaca is showing bursts of high magnetic susceptibility towards the beginning and end of the 19-11 record, which may indicate periods of rapid glacial erosion. These occur alongside profound troughs in the cave records, which are believed to represent increased monsoon intensity. This relationship would support the hypothesis that moisture supply is the dominant control on glacial activity in the region. 
+
+  Interestingly, while the beginning of the Junin record supports the idea of increased glaciation during lower δ^18^O values in the caves, the end of the record shows the opposite. We can see that the glaciation index gradually lowers to the end of the record, we would expect the glaciation index to increase if the relationship was straightforward. Here we must consider the lower resolution of lake records, especially when we are analyzing a composite record that combines multiple parameters. There appears to be a peak in glaciation index around 145 ka, which may be a bit older than is displayed here. If this is so then it could be that this peak in glaciation index occurs closer to the drop at the end of dry period recorded in the caves (approx 150 ka). This is not to say it occurred at exactly 150 ka, just that it may not be as young as 145 ka. The drop off in the glaciation index at the end of the record may be following the increasing δ^18^O values at the end of the cave records. Thus, our understanding of these changes may be sound and are merely being affected by poor resolution. 
+
+  It is also possible that our understanding of the controls of glaciation are not as sound as we may want to think. Moisture supply is most definitely a first order control on glaciation, you simply need precipitation to grow glaciers in any meaningful way. That being said, moisture is increasing as insolation also increases, which seems to indicate warmer and wetter conditions. Temperature is another very important control on glacial growth and retreat. If austral summer insolation (recall that December is summer in the Southern Hemisphere) is higher, then the temperatures were likely also a bit warmer. This may have increased the amount of ablation that occurs in the melt season, once again leading to ablation outpacing growth and causing glacial retreat. This relationship would indicate that there is a critical point between high moisture and moderate temperature that promotes increased glaciation. 
+
+  Overall, comparison of the composite cave records and the two lake records has shed light on regional paleoclimate. We have observed the importance of moisture supply in supporting glacial growth and are left with questions about the degree to which temperature modulates glaciation. Clearly, the cave record have allowed us to look at the lake records in a way that we could not have without them. The lake records are merely indicating changes in glacial sediment input, not temperature or precipitation amount. Speleothem records allow us to strengthen our understanding of other proxies and paleoclimate in general. 
+
+### A Global Context
+
+#### China
+  After assessing the importance of these cave records on a local scale, we can now take a look at South American hydroclimate in a global context.
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+hbsFig<- China_Stals %>% 
+  ggplot() + 
+   geom_rect(aes(xmin= 161000, xmax=159000, ymin=-10, ymax=-4), fill = "lightgray", alpha = 0.02)+ 
+  geom_rect(aes(xmin= 162000, xmax=164000, ymin=-10, ymax=-4), fill = "lightgray", alpha = 0.02) +
+  geom_line(aes(x = Age, y = o, color = Stal)) + 
+  geom_rangeframe() + 
+  theme_tufte() + 
+  theme(aspect.ratio = 1/2, 
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),  
+        panel.background = element_blank(),
+        axis.text.y = element_text(color = "black"),
+        legend.key = element_rect(fill = "transparent"),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank()) + 
+  scale_color_manual(values = c("coral", "green4", "purple")) + 
+  ylab(ylabel) +
+  xlab(xlabel)+
+   xlim(c(135000, 171000)) 
+
+```
+
+```{r message = FALSE, echo = FALSE, warning = FALSE}
+m <- ggplot() + 
+  geom_rect(aes(xmin= 162000, xmax=164000, ymin=-18.5, ymax=-14), fill = "gray", alpha = 0.6) + 
+  geom_rect(aes(xmin= 161000, xmax=159000, ymin=-18.5, ymax=-14), fill = "gray", alpha = 0.6) + #Recreating n but now were using the interglacial bars, I named it m because that comes next in the aplhabet 
+  geom_line(data= SA_Stals_Inso, aes(x= AgeHy, y = o, color = Stal)) +
+  geom_line(data = SA_Stals_Inso, aes(x = Age, y = (Ins/-6.4), group = Stal), color = "black") +
+  geom_point(data = ages, aes(x = age, y = o), color = "#BF1A2F") +
+  geom_errorbar(data = ages, aes(xmin = e2, xmax= e1, y = o), width = .2) + 
+   geom_point(data = Sin, aes(x = age, y = o), color = "#F7D002") + 
+  geom_point(data = Burn, aes(x = age, y = o), color = "#454E9E") + 
+  geom_rangeframe() +
+  scale_y_continuous(breaks = c(-13, -14, -15, -16, -17, -18, -19), sec.axis = sec_axis(~.*-6.4, name = insolabel)) +
+  scale_colour_manual(values = c("#BF1A2F","#454E9E", "#F7D002")) + 
+  xlim(c(135000, 171000)) + ylab(ylabel) + xlab(xlabel) + theme_tufte() +
+  theme(aspect.ratio = 1/2, 
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),  
+        panel.background = element_blank(), 
+        axis.text.y = element_text(color = "black"),
+        axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        legend.key=  element_rect(fill = "transparent")) 
+```
+
+```{r message = FALSE, echo = FALSE, warning = FALSE, include = FALSE}
+m/hbsFig + plot_layout(guides = "collect") 
+#touched up in photoshop
+```
+![](./Figures/nvs3 copy.png)
+
+  Here we are comparing the Peruvian cave records (top) to three Chinese speleothem records (bottom). The Chinese records come from Hulu and Sanbao caves and are comprised of three speleothems, two from Hulu and one from Sanbao. Both of these caves are in the Chinese subtropics, lying just south of the 30th parallel. They are effected by the East Asian Summer Monsoon (EASM) in a similar way that the Peruvian caves are effected by the SASM. The amount effect has also been evoked to explain some of the variation in δ^18^O in the Chinese speleothem records. That being said, because these caves are outside of the tropics the amount effect is a less likely answer to the question of what is modulating the δ^18^O. Instead, the changes in δ^18^O have also been attributed to changes in the amount of summer and winter precipitation. Modern day observations show a strong difference in precipitation that occurs during the EASM and the East Asian Winter Monsoon (EAWM), which brings moisture from the northwest instead of the southeast. EAWM precipitation generally has a much higher δ^18^O than EASM precipitation does. Thus, we can attribute changes in the δ^18^O to changes in the strength of the EASM in relation to the EAWM. Higher δ^18^O values would indicate a weakening of the EASM and/or a strengthening of the EAWM. Conversely, lower δ^18^O values would indicate a strengthened EASM and/or a weakened EAWM. 
+
+  [Kanner et al. (2012)](https://www.science.org/doi/10.1126/science.1213397) and [Rodbell (2012)](https://www.science.org/doi/full/10.1126/science.1218365) best described the relationship between northern and southern hemisphere records. [Rodbell (2012)](https://www.science.org/doi/full/10.1126/science.1218365) coined the term "marching in near lock step", which alludes to the striking similarity seen between the high latitudes of the Northern Hemisphere and the low latitudes of the Southern Hemisphere. We generally see strengthened SASM alongside colder conditions and increased glaciation int he Northern Hemisphere. At risk of beating a dead horse, this is again attributed to a decrease in Northern Hemisphere insolation and an increase in Southern Hemipshere insolation, which steepens the SST gradient and leads to the southerly migration of the ITCZ. Given this relationship, we would expect an increase in SASM to be attributed to a decrease in EASM intensity and/or an increase in the EAWM intensity. We could also see such an increase in aridity that both seasonal monsoons decrease and the δ^18^O increases. This would be effectively impossible to distinguish from a simple increase in EAWM intensity using solely the δ^18^O of the Chinese speleothems. Regardless of the driver, one expects decreased Peruvian speleothem δ^18^O to coincide with increased Chinese speleothem δ^18^O. 
+
+  Upon first glance the relationship between the Peruvian and Chinese cave records is antiphased. One can clearly see that the while the Peruvian δ^18^O record increases towards 150 ka, the Chinese δ^18^O record decreases. After 150 ka, the Chinese δ^18^O record increases while the Peuvian δ^18^O record decreases. The anti-phasing of the record can be explained by inter-hemispheric insolation forcing, with Southern Hemisphere inolation lows coinciding with Northern hemisphere insolation highs. Thus, while the SASM intensity is believed to have decreased in the middle of the record, the EASM intensity likely decreased and/or the EAWM intensity decreased. Conversely, at the beginning and end of the record insolation is higher in the Southern Hemisphere and the SASM was likely much stronger. We can see higher δ^18^O values in the Chinese speleothems at the beginning and end of this period of time, indicating a weaker EASM and/or a stronger EAWM. Again we see that on linger timescales the records are anti-phased, or marching in near lock step. As on record goes up the other goes down, just as the footfalls of a marching soldier. 
+
+  While the anti-phasing of the two hemispheres is neatly displayed across the record as a hole, on smaller timescales the relationship becomes somewhat obscured. Highlighted in grey boxes are events know as "Chinese Interstadials". These were defined by [Wang et. al. (2008)](https://www.nature.com/articles/nature06692) as periods in Chinese speleothem and loess (a time of fine sediment originated by glacial erosion and ardity) records that indicate wetter conditions in an otherwise dry glacial period. Given the degree of interconnection between the hemispheres, if these Chinese interstadial events were driven by large scale Northern Hemisphere climate change, it is likely that they were also recorded in the Peruvian record. Furthermore, one would expect the Peruvian record to respond in the opposite way as the Chinese records. Upon close inspection, the only interstadial that seems to follow this relationship is the one from 161 ka to 159 ka. In this window we see that the Peruvian speleothems all have anomalously high δ^18^O values while the Chinese speleothems have the expected low δ^18^O values. Note that the 19-11 record reaches a peak during this time frame and it could be squished due to the age model issues discussed previously. The shaping and timing of this event in the Peruvian record is remarkable similar to the morphology and timing of D/O events that occur during MIS 2, in fact, [Burns et al. (2019)](https://www.nature.com/articles/s41598-018-37854-3) referred to oscillations like these as "D/O like" events. It could be that this oscillation is related to sudden Northern Hemisphere warming, leading to ice sheet retreat, lowering of the SST gradient, northern migration of the ITCZ, weakening of the SASM, strengthening of the EASM and/or weakening of the EAWM. The other two interstadial events may have been caused by climate dynamics localized to East Asia, or if they were caused by ice sheet dynamics the oscillations may not have been profound enough to lead to changes in the SASM. While there are still questions to be answered about two of these interstadial events, there is more to explore about the 161-159 ka window. 
+
+#### Mediterranean
+In order to better examine the global implications of these D/O like event, I turn to the Mediterranean region. 
+```{r}
+cyFig<- Cy_Leb %>% 
+  filter(!is.na("Age")) %>% #there were some NA values that were giving me trouble, not sure where they came from, must have been the dataset
+  ggplot() + 
+  geom_rect(aes(xmin= 162000, xmax=164000, ymin=-9, ymax=-2), fill = "gray81", alpha = 0.06) + 
+  geom_rect(aes(xmin= 161000, xmax=159000, ymin=-9, ymax=-2), fill = "gray81", alpha = 0.06)+
+  geom_line(aes(x = Age, y = o, color = Stal)) +  
+  theme(aspect.ratio = 1/2, 
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),  
+        panel.background = element_blank(),
+        axis.text.y = element_text(color = "black"),
+        axis.text.x = element_text(color = "black"),
+        legend.key = element_rect(fill = "transparent")) + 
+  scale_color_manual(values = c("green4", "purple4"))+ 
+  ylab(ylabel) +
+  xlab(xlabel)+
+  xlim(c(135000, 171000)) 
+
+(m/hbsFig/cyFig) + theme(aspect.ratio = 1/4) 
+#again, touched up in photoshop
+```
+
+![](./Figures/cyleb copy.png)
+
+  Here I am comparing the Peruvian speleothem records to a composite record from Cyprus [(Nehme et. al., 2020)](https://www.sciencedirect.com/science/article/pii/S0277379120306259) and Lebanon [(Nehme et. al., 2018)](https://biblio.vub.ac.be/vubirfiles/37479169/climate_dynamics_during_the_penultimate_glacial_period_recorded_in_a_speleothem_from_kanaan_cave_lebanon_central_levant.pdf). The record from Cyprus only overlaps a small portion of the 19-11 record, but it is included in order to help explain the regional hydroclimate. The star of this show is the speleothem record from Lebanon. [(Nehme et. al., 2018)](https://biblio.vub.ac.be/vubirfiles/37479169/climate_dynamics_during_the_penultimate_glacial_period_recorded_in_a_speleothem_from_kanaan_cave_lebanon_central_levant.pdf) showed that the Lebanon record records hydroclimate in a different manner than the Peruvian or Chinese speleothems do. The changes in δ^18^O are attributed to combined effects of rainfall amount, source of rainfall, and seasonality of precipitation.[(Nehme et. al., 2018)](https://biblio.vub.ac.be/vubirfiles/37479169/climate_dynamics_during_the_penultimate_glacial_period_recorded_in_a_speleothem_from_kanaan_cave_lebanon_central_levant.pdf) showed that the δ^18^O interpretations are variable throughout the record, however, they attribute sudden negative excusions in δ^18^O values to short-lived regional wet periods. It is interesting to note that the most extreme negative excursion in the Lebanon record occurs contemporaneously with the end of the D/O like event in the Burns and Sinon records. This similarity may be further evidence of the global importance of this window of time, something that [(Nehme et. al., 2018)](https://biblio.vub.ac.be/vubirfiles/37479169/climate_dynamics_during_the_penultimate_glacial_period_recorded_in_a_speleothem_from_kanaan_cave_lebanon_central_levant.pdf) points out. This would indicate that the interstadial period in China coincided with a moderately wet period in Lebanon, which was then punctuated by a profound wet period in Lebanon and a slight increase to aridity in China. This interpretation highlights the idea that Northern Hemisphere climate was not uniform, a hypothesis that does not seem all that profound but does help us interpret regional differences. Here the Mediterranean climate seems to be reacting to the D/O like event in a manner that is more in line with the changes in hydroclimate in Peru. Meaning that these fluctuations that are outside of the scope of insolation forcing need to be better studied, especially considering the fact that anthropogenic climate change is also a sudden increase in temperature that is not explained by insolation. It is reasonable to assume that hydroclimate may respond in a similar way as it did in the past, thus these events are key to our understanding of the future. 
+
+## Conclusions 
+
+  The δ^18^O time series from speleothem 19-11 shows a good degree of replication with the two records from Huagapo. This is especially remarkable considering the fact that the age model has yet to be finalized and perfected. The 19-11 δ^18^O record shows a Strong anti-correlation with Southern Hemisphere December insolation, supporting the idea that SASM intensity is modulated by the mean position of the ITCZ. The mean position of the ITCZ is modulated by SST gradients, which are in part modulated by insolation differences between the hemispheres. Given this strong relationship between 19-11, the other records, and insolation, I am confident in using the combined record from both of these caves to make interpretations about regional and global paleoclimate during MIS 6. 
+  
+  The record from 19-11 and Huagapo cave show good agreement with two overlapping lake records from the tropical Andes. Both the Lake Junin and Lake Titicaca records show a decrease in glacial sediment input and precipitation at the same time that the cave records indicate a decrease in SASM intensity. This decrease in SASM intensity aligns with a trough in the December insolation for the Southern Hemisphere, once again showing the importance of insolation on modulating paleoclimate in this region. 
+  
+  On longer time scales the 19-121 and Huagapo records show anti-correlation with speleothem records from the Chinese sub-tropics. This opposing relationship is precisely what is expected given insolation controls. As insolation is higher in the Southern Hemisphere and SST gradients are higher, the mean position of the ITCZ shifts south and the SASM strengthens while the EASM is believed to weaken. Conversely, when insolation is lower in the Southern Hemisphere and the SST gradient is lower, the mean position of the ITCZ shifts north and the SASM weakens while the EASM intensifies. The anti-correlation between the Peruvian and Chinese speleothem records seems to break down on shorter time scale fluctuations. This could be due to a number of issues, including the different growth rates and age models behind each of these speleothem records. This being said, some events seem to affect both of the records in the anti-phased relationship that we would expect. These events seem to have the timing and morphology of "D/O like" events mentioned by [Burns et al. (2019)](https://www.nature.com/articles/s41598-018-37854-3). 
+  
+  The "D/O like" event in the Peruvian speleothem record from 161-159 ka seems to have be recorded in other Northern hemisphere speleothem records. In a Lebanese speleothem record a "saddle" of high δ^18^O values begins around 163 ka and ends at 159 ka, nearly the same timing as the "D/O like" event in the Burns and Sinon event. The greatest amount of overlap occurs at the rapid end of this event in the Burns, Sinon, and Lebanese records at 159 ka. This drop in the Lebanese δ^18^O values is believed to partially reflect an increase in precipitation amount. Thus, we see strong wet periods in both the Peruvian and Lebanese records at 159 ka. This relationship is not the simple "hydrologic see-saw" that was seen between the Peruvian and Chinese records. Providing further reason to continue to explore the potential causes and effects of rapid oscillations. 
+  
+## References 
+
+Burns, S.J., Welsh, L.K., Scroxton, N., Cheng, H. and Edwards, R.L., 2019. Millennial and orbital scale variability of the South American Monsoon during the penultimate glacial period. Scientific reports, 9(1), pp.1-5.
+
+Cheng, H., Edwards, R.L., Shen, C.C., Polyak, V.J., Asmerom, Y., Woodhead, J., Hellstrom, J., Wang, Y., Kong, X., Spötl, C. and Wang, X., 2013. Improvements in 230Th dating, 230Th and 234U half-life values, and U–Th isotopic measurements by multi-collector inductively coupled plasma mass spectrometry. Earth and Planetary Science Letters, 371, pp.82-91.
+
+Dansgaard, W., Johnsen, S.J., Clausen, H.B., Dahl‐Jensen, D., Gundestrup, N., Hammer, C.U. and Oeschger, H., 1984. North Atlantic climatic oscillations revealed by deep Greenland ice cores. Climate processes and climate sensitivity, 29, pp.288-298.
+
+Fleitmann, D., Matter, A., Burns, S.J., Al-Subbary, A. and Al-Aowah, M.A., 2004. Geology and Quaternary climate history of Socotra. Fauna of Arabia, 20, pp.27-44. 
+
+Johnson, K.R., 2021. Tales from the underground: speleothem records of past hydroclimate. Elements: An International Magazine of Mineralogy, Geochemistry, and Petrology, 17(2), pp.93-100.
+
+Kanner, L.C., Burns, S.J., Cheng, H. and Edwards, R.L., 2012. High-latitude forcing of the South 
+American summer monsoon during the last glacial. Science, 335(6068), pp.570-573.
+
+Nehme, C., Verheyden, S., Noble, S.R., Farrant, A.R., Sahy, D., Hellstrom, J., Delannoy, J.J. and Claeys, P., 2015. Reconstruction of MIS 5 climate in the central Levant using a stalagmite from Kanaan Cave, Lebanon. Climate of the Past, 11(12), pp.1785-1799.
+
+Nehme, C., Kluge, T., Verheyden, S., Nader, F., Charalambidou, I., Weissbach, T., Gucel, S., Cheng, H., Edwards, R.L., Satterfield, L. and Eiche, E., 2020. Speleothem record from Pentadactylos cave (Cyprus): new insights into climatic variations during MIS 6 and MIS 5 in the Eastern Mediterranean. Quaternary Science Reviews, 250, p.106663.
+
+Novello, V.F., da Cruz, F.W., Vuille, M., Campos, J.L.P.S., Stríkis, N.M., Apaéstegui, J., Moquet, J.S., Azevedo, V., Ampuero, A., Utida, G. and Wang, X., 2021. Investigating δ13C values in stalagmites from tropical South America for the last two millennia. Quaternary Science Reviews, 255, p.106822.
+
+Scholz, D. and Hoffmann, D.L., 2011. StalAge–An algorithm designed for construction of speleothem age models. Quaternary Geochronology, 6(3-4), pp.369-382.
+
+Sinon, H., 2021. Extending the Record: South American Summer Monsoon Variability During MIS 6 and a First Look into MIS 7 Using Stable Isotopes of Peruvian Speleothems
+
+Wang, Y.J., Cheng, H., Edwards, R.L., An, Z.S., Wu, J.Y., Shen, C.C. and Dorale, J.A., 2001. A high-resolution absolute-dated late Pleistocene monsoon record from Hulu Cave, China. Science, 294(5550), pp.2345-2348.
+
+Wendt, K.A., Li, X. and Edwards, R.L., 2021. Uranium–thorium dating of speleothems. Elements: An International Magazine of Mineralogy, Geochemistry, and Petrology, 17(2), pp.87-92
+
+Zhang, X., Lohmann, G., Knorr, G. and Purcell, C., 2014. Abrupt glacial climate shifts controlled by ice sheet changes. Nature, 512(7514), pp.290-294.
