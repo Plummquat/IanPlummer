@@ -3,13 +3,9 @@
 Here I will be posting little bits about my research and other projects that I find interesting. 
 
 
-You can use the [editor on GitHub](https://github.com/Plummquat/IanPlummer/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+### Bio
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Im a PhD student working at the Paleoclimate Lab of the University at Albany in New York. My PhD research focuses on using coral records to reconstruct sea surface temperature, sea surface salinity, Red Sea overturning circulation, regional wind phenomena, and more! 
 
 ```markdown
 Syntax highlighted code block
