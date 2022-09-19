@@ -1,4 +1,7 @@
-## Welcome to GitHub Pages
+## Welcome to my page!
+
+Here I will be posting little bits about my research and other projects that I find interesting. 
+
 
 You can use the [editor on GitHub](https://github.com/Plummquat/IanPlummer/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
