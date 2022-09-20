@@ -8,9 +8,7 @@
 
 }
 body {
-	color:#CC6699;
-	background-image:linear-gradient(#f67b6b, #f2c1ea, #f8f9c7);
-	background-repeat:no-repeat;
+	color:#000000;
 	background-attachment:fixed;
 	font-family:"Blackwolf", sans-serif;
 	font-size:20px;
