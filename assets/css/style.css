@@ -2,13 +2,12 @@ body {
   background-color: black;
 }
 
-h1 {
+h {
   margin-right: 150px;
   margin-left: 80px;
   color: #39FF14;
   text-align: center;
 }
-
 p {
   margin-top: 100px;
   margin-bottom: 100px;
