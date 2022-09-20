@@ -2,7 +2,19 @@ body {
   background-color: black;
 }
 
-h {
+h1 {
+  margin-right: 150px;
+  margin-left: 80px;
+  color: #39FF14;
+  text-align: center;
+}
+h2 {
+  margin-right: 150px;
+  margin-left: 80px;
+  color: #39FF14;
+  text-align: center;
+}
+h3 {
   margin-right: 150px;
   margin-left: 80px;
   color: #39FF14;
