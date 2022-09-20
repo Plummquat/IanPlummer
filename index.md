@@ -7,4 +7,5 @@ Here I will be posting little bits about my research and other projects that I f
 
 I'm a PhD student working at the Paleoclimate Lab of the University at Albany in New York. My PhD research focuses on using coral records from the Red Sea to reconstruct sea surface temperature, sea surface salinity, circulation, regional wind phenomena, and more! I have also done work on speleothems from the Peruvian Andes, where I used oxygen isotopes to reconstruct monsoon variation from 135 ka to 160 ka. Outside of paleoclimate im broadly interested in geology, hydrology, and weather. 
 
-
+### Socials
+href="https://twitter.com/plumquat" >Twitter</a>
