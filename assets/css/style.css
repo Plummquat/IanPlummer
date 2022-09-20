@@ -2,15 +2,12 @@
 	font-family:"Blackwolf";
 	src: url("BlackWolf.ttf");
 }
-@font-face {
-	font-family:"C059"
-	src: url("urw-base35/C059-Bold.otf")
 
 }
 body {
 	color:#000000;
+	background-image:linear-gradient(#FF10F0);
 	background-attachment:fixed;
-	font-family:"Blackwolf", sans-serif;
 	font-size:20px;
 }
 a {
