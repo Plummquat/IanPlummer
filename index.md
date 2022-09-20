@@ -19,7 +19,7 @@ I'm a PhD student working at the Paleoclimate Lab of the University at Albany in
 
 Undergrad Thesis on Peruvian Speleothems 
 
-## Miscellaneous
+## Geoscience Stuff
 Cool Outcrops and Rocks 
 
 Monthly NY Climate Reports
@@ -32,6 +32,8 @@ May 2022 Flooding in Schenectady
 [Twitter](https://twitter.com/plumquat)
 
 [Instagram](https://www.instagram.com/plummquat/?hl=en)
+
+[UAlbany GSEU](https://twitter.com/ualbanygseu) (I dont run this one)
 
 <div>
 <div class="container">
