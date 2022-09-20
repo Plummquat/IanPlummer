@@ -31,6 +31,6 @@ p {
   color: #FF10F0;
   font-family: monospace;
   font-size: 20px;
-  p.dotted {border-style: dotted;} 
+  border-style: dashed; 
 }
 
