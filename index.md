@@ -39,7 +39,6 @@ May 2022 Flooding in Schenectady
 <div class="container">
   <img src="TNY.png" width="200">
   <img src="LICM.png" width="200">
-  <div class="topleft">
 </div>
 
   
