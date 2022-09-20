@@ -2,6 +2,7 @@
 
 Here I will be posting little bits about my research and other projects that I find interesting. Throughout this website you will find various links to interesting gelogic outcrops and oddities, videos and images I have taken of floods and ice jams, and a whole lot of weather and climate related maps I have made. 
 
+I'm a major proponent of free and easily accessible data and code, thus everything on here is for the taking. Occasionally ill have to only post graphs or images due to legal reasons. 
 
 # About Me
 
