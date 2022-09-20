@@ -10,7 +10,7 @@ I'm a PhD student working at the Paleoclimate Lab of the University at Albany in
 
 <div>
 <img src="IMG_6707.jpg" alt="drawing" width="400"/> <img src="IMG_7110.jpg" alt="drawing" width="600"/>  <img src="IMG_4738.jpg" alt="drawing" width="400"/> 
-<div>
+
 
 # Links!
 
