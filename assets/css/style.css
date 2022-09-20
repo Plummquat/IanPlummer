@@ -24,11 +24,12 @@ h3 {
   text-align: center;
 }
 p {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   margin-right: 150px;
   margin-left: 80px;
   color: #FF10F0;
   font-family: monospace;
   font-size: 20px;
 }
+p.dotted {border-style: dotted;} 
