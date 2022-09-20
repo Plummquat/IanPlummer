@@ -1,3 +1,9 @@
+
+<div class="container">
+  <img src="TNY.png" width="200">
+  <div class="topleft">
+</div>
+
 # Welcome to my page!
 
 Here I will be posting little bits about my research and other projects that I find interesting. Throughout this website you will find various links to interesting gelogic outcrops and oddities, videos and images I have taken of floods and ice jams, and a whole lot of weather and climate related maps I have made. 
@@ -32,7 +38,3 @@ May 2022 Flooding in Schenectady
 
 [Instagram](https://www.instagram.com/plummquat/?hl=en)
 
-<div class="container">
-  <img src="TNY.png" width="100" height="300">
-  <div class="topleft">Top Left</div>
-</div>
