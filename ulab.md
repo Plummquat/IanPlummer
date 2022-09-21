@@ -16,3 +16,5 @@ As coral’s grow, they secrete a calcium carbonate (CaCO3) skeleton. This proce
 
 We are also working in collaboration with the [Union College Stable Isotope Mass Spectrometer Lab](https://minerva.union.edu/gillikid/lab.htm) in Schenectady to get oxygen and carbon stable isotope records to coincide with the Sr, Mg, and Ba concentrations. This will allow us to directly reconstruct sea surface temperature and salinity (info on how this works found on the dedicated page). 
 
+## Publications
+Stay tuned!!
