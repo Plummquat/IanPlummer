@@ -11,7 +11,7 @@ ICP-OES is a method of measuring the concentrations of various elements in a giv
 
 When the nebulized sample enters the plasma it becomes energized, so much so that valence electrons will “jump up” an orbital, thus entering an “excited” state. As the excited sample moves into the cooler portions of the plasma, the valence electrons will return to their original lower energy state. In doing this, the atoms release energy. This released energy has a wavelength that is unique to each element, which makes it possible for us to detect what elements are present in a given sample. The intensity of energy at each wavelength can then be converted into a concentration value. 
 
-  <img src="index.png" width="400" alt="Taken from Agilent"> <em> Image taken from Agilent showing the grounding of the valence electrons and emission of energy at a specific wavelength </em>
+  <img src="index.png" width="400" alt="Taken from Agilent"> <em> Image taken from Agilent showing the emission of energy at a specific wavelength </em>
 
 I won’t go into too much detail about the processes so as to not bore you or distract from the rest of what I want to show off. However, if you are interested in learning more [agilent](https://www.agilent.com/en/support/atomic-spectroscopy/inductively-coupled-plasma-optical-emission-spectroscopy-icp-oes/icp-oes-faq) has a great page that can get you started. 
 
