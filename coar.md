@@ -1,0 +1,5 @@
+# Cool Outcrops and Rocks
+In undergrad I studied geology more than anything and I still carry that passion into my graduate studies. Through my time at [Union College] I not only learned a lot about the geosciences, but was also able to get a lot of amazing first-hand experience in the field. Through field trips, both in and out of college, I have amassed a collection of interesting hand specimens and field images. This page will serve as a way to curate that collection. Do note that I am most active on twitter so a lot of these links will send you to my twitter threads.
+
+## [Geology of Central Park, NYC](https://twitter.com/plumquat/status/1430973196837269506?s=20&t=C_d62mw0KZ9cgxqMZuWXRg) 
+The linked thread is one of my favorite trips. Growing up around NYC was an amazing experince but we do not get too many rocks, atleast rocks that are uncovered and easily accesible. Central Park serves as one of the best places to see bedrock outcrops, especially in Manhattan. In this trip I followed a recent paper published by [Jaret et. al. 2021], which outlined some interesting new developments in our understanding of the geology of central park. 
