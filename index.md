@@ -41,4 +41,6 @@ May 2022 Flooding in Schenectady
   <img src="LICM.png" width="200">
 </div>
 
+<div id="htmlwidget-4092" style="width:75%; height:75%; position:absolute" class="leaflet html-widget"></div>
+
   
