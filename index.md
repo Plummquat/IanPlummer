@@ -24,9 +24,15 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 
 Monthly NY Climate Reports
 
+Geology of New York State
+
 2022 Mohawk River Ice Jams 
 
 May 2022 Flooding in Schenectady
+
+## Miscellaneous
+The 1920 Agrarian Movement in Sant'Apollinare Italy
+
 
 ## Socials
 [Twitter](https://twitter.com/plumquat)
