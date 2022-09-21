@@ -20,7 +20,7 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 [Undergrad Thesis on Peruvian Speleothems](Final_Project_Plummer.html) 
 
 ## Geoscience Stuff
-Cool Outcrops and Rocks 
+[Cool Outcrops and Rocks](coar.md)
 
 Monthly NY Climate Reports
 
