@@ -9,6 +9,10 @@ head {
   zoom: 1.0 ;
 }
 
+@-ms-viewport {
+  width: device-width ;
+}
+
 body {
   background-color: black;
   background-image: TNY.png; 
