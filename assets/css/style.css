@@ -16,31 +16,31 @@ body {
 }
 
 h1 {
-  margin-right: 150px;
-  margin-left: 150px;
+  margin-right: 20%;
+  margin-left: 20%;
   color: #39FF14;
   font-family: monospace;
   text-align: center;
 }
 h2 {
-  margin-right: 150px;
-  margin-left: 150px;
+  margin-right: 20%;
+  margin-left: 20%;
   color: #39FF14;
   font-family: monospace;
   text-align: center;
 }
 h3 {
-  margin-right: 150px;
-  margin-left: 150px;
+  margin-right: 20%;
+  margin-left: 20%;
   color: #39FF14;
   font-family: monospace;
   text-align: center;
 }
 p {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-right: 150px;
-  margin-left: 150px;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-right: 20%;
+  margin-left: 20%;
   color: #FF10F0;
   font-family: monospace;
   font-size: 20px;
