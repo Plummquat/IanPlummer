@@ -9,7 +9,7 @@ I'm a major proponent of free and easily accessible data and code, thus everythi
 I'm a PhD student working at the Paleoclimate Lab of the University at Albany in New York. My PhD research focuses on using coral records from the Red Sea to reconstruct sea surface temperature, sea surface salinity, circulation, regional wind phenomena, and more! I have also done work on speleothems from the Peruvian Andes, where I used oxygen isotopes to reconstruct monsoon variation from 135 ka to 160 ka. Outside of paleoclimate im broadly interested in geology, hydrology, and weather. 
 
 
-<img src="IMG_6707.jpg" alt="drawing" width="30%"/> <img src="IMG_7110.jpg" alt="drawing" width="45%"/>  <img src="IMG_4738.jpg" alt="drawing" width="30%"/> 
+<img src="IMG_6707.jpg" alt="drawing" width="25%"/> <img src="IMG_7110.jpg" alt="drawing" width="40%"/>  <img src="IMG_4738.jpg" alt="drawing" width="25%"/> 
 
 
 # Links!
@@ -41,6 +41,5 @@ May 2022 Flooding in Schenectady
   <img src="LICM.png" width="200">
 </div>
 
-<div id="htmlwidget-4092" style="width:75%; height:75%; position:absolute" class="leaflet html-widget"></div>
 
   
