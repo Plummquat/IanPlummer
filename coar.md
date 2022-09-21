@@ -7,5 +7,8 @@ The linked thread is one of my favorite trips. Growing up around NYC was an amaz
  <center><img src="E9vWh4MXMBANGoo.jpeg" width="60%"></center> 
  <center><font color= "white" ><em> Image of an outcrop of what is mapped as the Hartland Formation with a dyke intruding on top of it</em></font></center>
  
-## [Geology of Acadia National Park]
+## [Geology of Acadia National Park](https://twitter.com/plumquat/status/1429154183387750405?s=20&t=H3uVzCO9f-hzv9bZJgW4Ug)
+This is another twitter thread but with much more detail. In the summer of 2021, my girlfriend and I traveled to Acadia National Park and I had a ball looking at all the rocks. I spent much of the drive-up reviewing material from info that I had printed out and books that I had purchased so I went into the trip eager to see these things. This was by far one of my favorite trips. 
 
+ <center><font color= "white" ><em> An outcrop of the "Shatter Zone" at Sand beach. This is believed to be the remnants of the roof of an ancient
+ magma chamber that collapsed in on the magma, which serves as the matrix supporting the clasts in the breccia! </em></font></center>
