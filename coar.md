@@ -5,7 +5,7 @@ In undergrad I studied geology more than anything and I still carry that passion
 The linked thread is one of my favorite trips. Growing up around NYC was an amazing experience but we do not get too many rocks, at least rocks that are uncovered and easily accessible. Central Park serves as one of the best places to see bedrock outcrops, especially in Manhattan. In this trip I followed a recent paper published by [Jaret et. al. 2021](https://par.nsf.gov/servlets/purl/10232156), which outlined some interesting new developments in our understanding of the geology of central park. This study was unique in its geochemical approach to trying to decipher the provenance (more or less source of the material) of the rock units that make up the bedrock of NYC. Outside of the technical details, the paper also functions as an excellent field trip guide. If you are visiting NY, wanting to learn more about your own backyard, or are an educator interested in local geology I would highly recommend reading it.
 
  <center><img src="E9vWh4MXMBANGoo.jpeg" width="60%"></center> 
- <center><font><em> Image of an outcrop of what is mapped as the Hartland Formation with a dyke intruding on top of it</em></font></center>
+ <center><font color= "white" ><em> Image of an outcrop of what is mapped as the Hartland Formation with a dyke intruding on top of it</em></font></center>
  
 ## [Geology of Acadia National Park]
 
