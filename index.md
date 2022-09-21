@@ -5,11 +5,11 @@ Here I will be posting little bits about my research and other projects that I f
 This is all fairly rudimentary as a result of my simple HTML and CSS skills but I plan on revamping it as I learn more. I'm a major proponent of free and easily accessible data and code, thus everything on here is for the taking. Occasionally ill have to only post graphs or images due to legal reasons. 
 
 # About Me
-<img src="IMG_7110.jpg" alt="drawing" width="70%" class="center"/>  
+<center><img src="IMG_7110.jpg" alt="drawing" width="70%"></center>
 
 I'm a PhD student working in the Paleoclimate Lab of the University at Albany in New York. My PhD research focuses on using coral records from the Red Sea to reconstruct sea surface temperature, sea surface salinity, circulation, regional wind phenomena, and more! I have also done work on speleothems from the Peruvian Andes, where I used oxygen isotopes to reconstruct monsoon variation from 135 ka to 160 ka. Outside of paleoclimate im broadly interested in geology, hydrology, and weather. 
 
-<img src="IMG_6707.jpg" alt="drawing" width="40%"/> <img src="IMG_4738.jpg" alt="drawing" width="40%"/> 
+<img src="IMG_6707.jpg" alt="drawing" width="30%"/> <img src="IMG_4738.jpg" alt="drawing" width="30%"/> 
 
 
 # Links!
