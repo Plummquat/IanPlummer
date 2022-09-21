@@ -14,4 +14,6 @@ This is another twitter thread but with much more detail. In the summer of 2021,
  <center><font color= "white" ><em> An outcrop of the "Shatter Zone" at Sand beach. This is believed to be the remnants of the roof of an ancient
  magma chamber that collapsed in on the magma, which serves as the matrix supporting the clasts in the breccia! </em></font></center>
 
+## Stark's Knob: Pillow Basalts near Saratoga Springs, NY
+There is going to be a dedicated page to the geology of NY State, which will serve as a better reference for this geologic oddity. 
 
