@@ -2,7 +2,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
+</html>
 # Welcome to my page!
   
 Here I will be posting little bits about my research and other projects that I find interesting. Throughout this website you will find various links to interesting gelogic outcrops and oddities, videos and images I have taken of floods and ice jams, and a whole lot of weather and climate related maps I have made. 
