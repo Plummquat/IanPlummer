@@ -17,7 +17,7 @@ I'm a PhD student working at the Paleoclimate Lab of the University at Albany in
 ## Research 
 [Coral Paleoclimate @ UAlbany](ulab.md)
 
-Undergrad Thesis on Peruvian Speleothems 
+[Undergrad Thesis on Peruvian Speleothems](Final_Project_Plummer.html) 
 
 ## Geoscience Stuff
 Cool Outcrops and Rocks 
