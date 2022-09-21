@@ -7,7 +7,7 @@ I know it isn't the prettiest way to design this but the headers serve as links 
 ## [ICP-OES](icpoes.md)
 The centerpiece of the lab is a brand new Thermo Scientific iCAP PRO Series ICP-OES (Inductively Coupled Plasma- Optical Emission Spectroscopy), which we are using to analyze concentrations of Strontium (Sr), Magnesium (Mg), Calcium (Ca), and Barium (Ba) in coral powder samples. We are also analyzing a slew of other elements on the lake core side of things. 
 
-  <img src="thumbnail_IMG-9482.jpg" width="60%">
+ <center><img src="thumbnail_IMG-9482.jpg" width="60%"></center>
 
 ## Research
 Broadly, our goal is to reconstruct a number of conditions in and around the Red Sea using geochemical traces within coral skeletons. Our work will hopefully shed light on spatial and temporal variation in sea surface temperature, sea surface salinity, the Red Sea overturning circulation, dust deposition from wind, and more. We are also looking to analyze patterns in any of these conditions to tease out the possible effects of inter-annual variation such as ENSO, NAO/AO, IOD, as well as anthropogenic effects. 
