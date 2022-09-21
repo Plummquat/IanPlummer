@@ -16,22 +16,22 @@ body {
 }
 
 h1 {
-  margin-right: 20%;
-  margin-left: 20%;
+  margin-right: 10%;
+  margin-left: 10%;
   color: #39FF14;
   font-family: monospace;
   text-align: center;
 }
 h2 {
-  margin-right: 20%;
-  margin-left: 20%;
+  margin-right: 10%;
+  margin-left: 10%;
   color: #39FF14;
   font-family: monospace;
   text-align: center;
 }
 h3 {
-  margin-right: 20%;
-  margin-left: 20%;
+  margin-right: 10%;
+  margin-left: 10%;
   color: #39FF14;
   font-family: monospace;
   text-align: center;
@@ -39,8 +39,8 @@ h3 {
 p {
   margin-top: 1%;
   margin-bottom: 1%;
-  margin-right: 20%;
-  margin-left: 20%;
+  margin-right: 10%;
+  margin-left: 10%;
   color: #FF10F0;
   font-family: monospace;
   font-size: 20px;
