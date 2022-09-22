@@ -15,5 +15,5 @@ This is another twitter thread but with much more detail. In the summer of 2021,
  magma chamber that collapsed in on the magma, which serves as the matrix supporting the clasts in the breccia! </em></font></center>
 
 ## Stark's Knob: Pillow Basalts near Saratoga Springs, NY
-There is going to be a dedicated page to the geology of NY State, which will serve as a better reference for this geologic oddity. 
+There is going to be a dedicated page to the geology of NY State, which will serve as a better reference for this geologic oddity. In short, Stark's Knob is an outcrop of pillow basalts, which stick out from the regional sedimentary bedrock. These pillow basalts erupted on the sea floor during the Taconic Orogeny in the Ordovician Period. They are named after [General John Stark](https://www.hudsoncrossingpark.org/starks-knob), who used the knob to help block escaping Brittish soldiers. 
 
