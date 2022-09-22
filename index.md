@@ -41,10 +41,7 @@ The 1920 Agrarian Movement in Sant'Apollinare Italy
 
 [UAlbany GSEU](https://twitter.com/ualbanygseu) (I dont run this one)
 
-<center>
-  <img src="TNY.png" width="200">
-  <img src="LICM.png" width="200">
-</center>
+<center><img src="TNY.png" width="200"/> <img src="LICM.png" width="200"></center>
 
 
   
