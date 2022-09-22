@@ -17,3 +17,7 @@ This is another twitter thread but with much more detail. In the summer of 2021,
 ## [Stark's Knob: Pillow Basalts near Saratoga Springs, NY](https://twitter.com/plumquat/status/1566863029622423557?s=20&t=4lQD0lxVvAcgVOiZE_veVA)
 There is going to be a dedicated page to the geology of NY State, which will serve as a better reference for this geologic oddity. In short, Stark's Knob is an outcrop of pillow basalts, which stick out from the regional sedimentary bedrock. These pillow basalts erupted on the sea floor during the Taconic Orogeny in the Ordovician Period. They are named after [General John Stark](https://www.hudsoncrossingpark.org/starks-knob), who used the knob to help block escaping British soldiers. 
 
+<center><img src="Fb6dlyjXkAA19My.jpeg" width="60%"></center> 
+<center><font color= "white" ><em> Picture of the upper portion of Stark's Knob on a rainy day. The rounded texture is where the pillow part of pillow basalts comes from, but they don't look too comfortable to me...</em></font></center>
+ 
+
