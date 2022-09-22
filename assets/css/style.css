@@ -54,7 +54,7 @@ p {
   border-style: dashed; 
 }
 
-#leftcol {
+leftcol {
   color: green;
   width:25%;
   position:absolute;
