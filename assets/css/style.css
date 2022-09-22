@@ -1,21 +1,19 @@
-<div id="htmlwidget-4092" style="width:75%; height:75%; position:absolute" class="leaflet html-widget"></div>
-
 
 @import url("https://fonts.googleapis.com/css2?family=Literata");
 
-* {
+{
     font-family: "Literata";
 }
 
-.toc-list, .toc-list ol {
+toc-list, toc-list ol {
   list-style-type: none;
 }
 
-.toc-list {
+toc-list {
   padding: 0;
 }
 
-.toc-list ol {
+toc-list ol {
   padding-inline-start: 2ch;
 }
 
