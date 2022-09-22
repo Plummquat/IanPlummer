@@ -1,33 +1,40 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-.container {
-  position: relative;
+h1 {
+  margin-right: 10%;
+  margin-left: 10%;
+  color: #39FF14;
+  font-family: monospace;
+  text-align: center;
+}
+h2 {
+  margin-right: 10%;
+  margin-left: 10%;
+  color: #39FF14;
+  font-family: monospace;
+  text-align: center;
+}
+h3 {
+  margin-right: 5%;
+  margin-left: 5%;
+  color: #39FF14;
+  font-family: monospace;
+  text-align: center;
+}
+p {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-right: 10%;
+  margin-left: 10%;
+  color: #FF10F0;
+  font-family: monospace;
+  font-size: 150%;
+  border-style: dashed; 
 }
 
-.topleft {
-  position: absolute;
-  top: 8px;
-  left: 16px;
-  font-size: 18px;
+leftcol {
+  color: green;
+  width:25%;
+  position:absolute;
+  left:5px;
+  top:0px;
+
 }
-
-img { 
-  width: 100%;
-  height: auto;
-  opacity: 0.3;
-}
-</style>
-</head>
-<body>
-
-<h2>Image Text</h2>
-<p>Add some text to an image in the top left corner:</p>
-
-<div class="container">
-  <div class="topleft">Top Left</div>
-</div>
-
-</body>
-</html>
