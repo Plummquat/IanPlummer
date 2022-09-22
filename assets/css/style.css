@@ -1,13 +1,22 @@
 <div id="htmlwidget-4092" style="width:75%; height:75%; position:absolute" class="leaflet html-widget"></div>
 
 
-@viewport {
-  width: device-width ;
-  zoom: 1.0 ;
+@import url("https://fonts.googleapis.com/css2?family=Literata");
+
+* {
+    font-family: "Literata";
 }
 
-@-ms-viewport {
-  width: device-width ;
+.toc-list, .toc-list ol {
+  list-style-type: none;
+}
+
+.toc-list {
+  padding: 0;
+}
+
+.toc-list ol {
+  padding-inline-start: 2ch;
 }
 
 body {
