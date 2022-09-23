@@ -24,7 +24,7 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 
 [Monthly NY Climate Reports](nyclim.md)
 
-Geology of New York State
+[Geology of New York State](download.png)
 
 2022 Mohawk River Ice Jams 
 
