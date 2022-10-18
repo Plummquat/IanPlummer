@@ -26,7 +26,7 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 
 [Geology of New York State](download.png)
 
-2022 Mohawk River Ice Jams 
+[2022 Mohawk River Ice Jams](apr22flood.md)
 
 April 2022 Flooding in Schenectady
 
