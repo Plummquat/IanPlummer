@@ -41,7 +41,7 @@ The 1920 Agrarian Movement in Sant'Apollinare, Italy
 
 [Instagram](https://www.instagram.com/plummquat/?hl=en)
 
-[Mastodon] @IMPlumm@sciencemastodon.com
+Mastodon @IMPlumm@sciencemastodon.com
 
 [UAlbany GSEU](https://twitter.com/ualbanygseu) (I dont run this one)
 
