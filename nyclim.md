@@ -7,5 +7,5 @@ I thought it would be both interesting and informative to show how the previous 
 
 Do note that the style, detail, and quality of these reports’ changes per month as I’m still finding the best way to go about this. I will share the bare bones of the code for these projects, but I keep tweaking it on a near monthly basis. Feel free to use the code to assess your own states’ climate. Sadly, the data set I use is confined to the continental US. There are other data sets for other countries and regions, so if you are not from the US this is still applicable to you. I will link some example code [here]. 
 
-## 2022
+## [2022](2022.md)
 Above link will send you to the page for 2022. 
