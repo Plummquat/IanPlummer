@@ -45,7 +45,7 @@ Mastodon @IMPlumm@sciencemastodon.com
 
 [UAlbany GSEU](https://twitter.com/ualbanygseu) (I dont run this one)
 
-<center><img src="TNY.png" width="200"/> <img src="LICM.png" width="200"></center>
+<center><img src="TNY.png" width="200"/> <img src="ae6fe2f690886c3dbe1f9cdeffdeeb1e_w200.gif" width="200"> <img src="LICM.png" width="200"></center>
 
 
   
