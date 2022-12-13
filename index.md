@@ -32,6 +32,8 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 
 [May 2022 Flooding in Schenectady](mayflood.md) 
 
+[Creating Monthly Temperature Trend Plots in R](TempPlots.html)
+
 ## Miscellaneous
 The 1920 Agrarian Movement in Sant'Apollinare, Italy
 
