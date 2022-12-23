@@ -34,6 +34,7 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 
 [Creating Monthly Temperature Trend Plots in R](TempPlot.html) 
 
+
 ## Miscellaneous
 The 1920 Agrarian Movement in Sant'Apollinare, Italy
 
@@ -47,6 +48,10 @@ Mastodon @IMPlumm@sciencemastodon.com
  <center><iframe allowfullscreen sandbox="allow-top-navigation allow-scripts" width="800" height="400" src="https://www.mastofeed.com/apiv2/feed?userurl=https%3A%2F%2Fsciencemastodon.com%2Fusers%2FIMPlumm&theme=dark&size=100&header=true&replies=false&boosts=false"></iframe></center>
 
 [UAlbany GSEU](https://twitter.com/ualbanygseu) (I dont run this one)
+
+## [Personal Weather Station @ My Parents House on Long Island](https://www.wunderground.com/dashboard/pws/KNYGARDE22)
+
+<center><iframe src='https://www.weatherlink.com/embeddablePage/show/616845e98df74e75a1a3ef5333a96137/signature' width='760' height='200' frameborder='0'></iframe></center>
 
 <center><img src="TNY.png" width="200"/> <img src="ae6fe2f690886c3dbe1f9cdeffdeeb1e_w200.gif" width="200"> <img src="LICM.png" width="200"></center>
 
