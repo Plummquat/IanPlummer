@@ -12,7 +12,7 @@ The centerpiece of the lab is a brand new Thermo Scientific iCAP PRO Series ICP-
 ## Research
 Broadly, our goal is to reconstruct a number of conditions in and around the Red Sea using geochemical tracers within coral skeletons. Our work will hopefully shed light on spatial and temporal variation in sea surface temperature, sea surface salinity, the Red Sea overturning circulation, dust deposition from wind, and more. We are also looking to analyze patterns in any of these parameters to tease out the possible effects of internal variability such as ENSO, IOD, NAO/AO, AMO, and more! 
 
- <center><img src="Screen_Shot_2022-12-20_at_15.31.19.png" width"50%"></center>
+ <center><img src="RSMaps.png" width="60%"></center>
 
 As coral’s grow, they secrete a calcium carbonate (CaCO3) skeleton. This process “traps” other elements such as Sr, Mg, and Ba. The controls on how much of each of these elements are incorporated into the coral skeleton is a product of a number of processes, come of which are highlighted in the dedicated page. We can analyze the concentrations of these elements on the ICP-OES and then construct a time series to see how the concentrations of these elements change with time. 
 
