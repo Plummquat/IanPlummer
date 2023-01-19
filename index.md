@@ -32,7 +32,7 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 
 [May 2022 Flooding in Schenectady](mayflood.md) 
 
-[Creating Monthly Temperature Trend Plots in R](TempPlot.html) 
+[Creating Monthly Temperature Trend Plots in R](Temp_Plots.html) 
 
 
 ## Miscellaneous
