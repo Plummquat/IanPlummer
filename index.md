@@ -40,6 +40,8 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 
 [Extracting SST Time Series from NOAA OISST Data](SavingOISST.html) 
 
+[Creating Probability Density Functions in R](PDFs.html) 
+
 ## Miscellaneous
 The 1920 Agrarian Movement in Sant'Apollinare, Italy
 
