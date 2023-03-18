@@ -26,13 +26,13 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 
 [Geology of New York State](download.png)
 
-2022 Mohawk River Ice Jams
-
 [April 2022 Flooding in Schenectady](apr22flood.md)
 
 [May 2022 Flooding in Schenectady](mayflood.md) 
 
 ## Data Vis Stuff
+
+[Interactive Maps](Figs.md)
 
 [Creating Monthly Temperature Trend Plots in R](Temp_Plots.html) 
 
@@ -41,9 +41,6 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 [Extracting SST Time Series from NOAA OISST Data](HROISST.html) 
 
 [Creating Probability Density Functions in R](PDFs.html) 
-
-## Miscellaneous
-The 1920 Agrarian Movement in Sant'Apollinare, Italy
 
 
 ## Socials
