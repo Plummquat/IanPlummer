@@ -4,7 +4,7 @@
 
 ## [Hurricane Ida](Ida.html)
 
-## Hurricane Henri
+## [Hurricane Henri](Henri.html)
 
 ## [Typhoon Maemi](Maemi.html)
 
