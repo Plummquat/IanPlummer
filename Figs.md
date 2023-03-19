@@ -2,7 +2,7 @@
 
 ## [2022 Flooding in Korea](Flood22.html)
 
-## Hurricane Ida
+## [Hurricane Ida](Ida.html)
 
 ## Hurricane Henri
 
