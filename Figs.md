@@ -6,7 +6,7 @@
 
 ## Hurricane Henri
 
-## Typhoon Maeami
+## [Typhoon Maemi](Maemi.html)
 
 ## Hurricane Irene
 
