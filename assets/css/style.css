@@ -18,27 +18,27 @@ toc-list ol {
 }
 
 body {
-  background-color: #191B21;
+  background-color: black;
   background-image: TNY.png; 
 }
 h1 {
   margin-right: 10%;
   margin-left: 10%;
-  color: #4B8ED3;
+  color: white;
   font-family: monospace;
   text-align: center;
 }
 h2 {
   margin-right: 10%;
   margin-left: 10%;
-  color: white;
+  color: #39FF14;
   font-family: monospace;
   text-align: center;
 }
 h3 {
   margin-right: 5%;
   margin-left: 5%;
-  color: white;
+  color: #39FF14;
   font-family: monospace;
   text-align: center;
 }
@@ -47,7 +47,7 @@ p {
   margin-bottom: 1%;
   margin-right: 10%;
   margin-left: 10%;
-  color: white;
+  color: #39FF14;
   font-family: monospace;
   font-size: 150%;
   border-style: dashed; 
