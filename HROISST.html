@@ -1662,6 +1662,7 @@ site_series&lt;- as.data.frame(site_series) #Converts above matrix into a data f
 month&lt;- rep(c(1,2,3,4,5,6,7,8,9,10,11,12), times = 41) #creates a column of months
 year&lt;- rep(c(1982:2022), each = 12) #creates a column of years
 yr&lt;- seq(from = 1982.0833, to = 2023, by = 0.0833) #creates a column of years and months in decimal format
+yr&lt;- yr - 0.0833 #final formatting on the above column
 
 
 #nest three lines take the columns we made earlier and stitch them into the data set
