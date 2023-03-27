@@ -11,3 +11,6 @@
 ## [Hurricane Irene](Irene.html)
 
 ## [Hurricane Sandy](Sandy.html)
+
+## [Japanese Disaster Monuments](JDM.html)
+
