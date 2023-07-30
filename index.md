@@ -20,6 +20,8 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 [Undergrad Thesis on Peruvian Speleothems](Final_Project_Plummer.html) 
 
 ## Geoscience Stuff
+[Professor Proxy](PP.html) 
+
 [Cool Outcrops and Rocks](coar.md)
 
 [Monthly NY Climate Reports](nyclim.md)
