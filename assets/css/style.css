@@ -34,8 +34,6 @@ h2 {
   color: #39ff14;
   font-family: monospace;
   text-align: center;
- ::selection {
-  background: var(#f000ff);
 }
 h3 {
   margin-right: 5%;
@@ -53,6 +51,9 @@ p {
   font-family: monospace;
   font-size: 150%;
   border-style: dashed; 
+}
+selection {
+  background: var(#f000ff)
 }
 
 leftcol {
