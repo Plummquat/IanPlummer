@@ -1,70 +1,55 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Literata");
 
-{
-    font-family: "Literata";
-}
-
-toc-list, toc-list ol {
-  list-style-type: none;
-}
-
-toc-list {
-  padding: 0;
-}
-
-toc-list ol {
-  padding-inline-start: 2ch;
-}
-
 body {
-  background-color: black;
-  background-image: TNY.png; 
+  font-family: "Literata", sans-serif;
+  background-color: #000;
+  background-image: url('TNY.png'); /* Assuming TNY.png is the correct path to your image */
+  background-size: cover;
+  color: #fff;
+  margin: 0;
 }
+
+h1, h2, h3 {
+  margin: 2% 10%;
+  text-align: center;
+}
+
 h1 {
-  margin-right: 10%;
-  margin-left: 10%;
   color: #f000ff;
-  font-family: monospace;
-  text-align: center; 
+  font-family: 'monospace';
 }
+
 h2 {
-  margin-right: 10%;
-  margin-left: 10%;
   color: #39ff14;
-  font-family: monospace;
-  text-align: center;
 }
+
 h3 {
-  margin-right: 5%;
-  margin-left: 5%;
   color: #39ff14;
-  font-family: monospace;
-  text-align: center;
+  margin: 2% 5%;
 }
+
 p {
-  margin-top: 1%;
-  margin-bottom: 1%;
-  margin-right: 10%;
-  margin-left: 10%;
+  margin: 1% 10%;
   color: #39ff14;
-  font-family: monospace;
-  font-size: 150%;
-  border-style: dashed; 
+  font-family: 'monospace';
+  font-size: 1.5em;
+  border: 2px dashed #39ff14;
+  padding: 10px;
 }
+
 selection {
-  background: var(#f000ff)
+  background: #f000ff;
 }
 
 leftcol {
   color: green;
-  width:25%;
-  position:absolute;
-  left:5px;
-  top:0px;
-
+  width: 25%;
+  position: absolute;
+  left: 5px;
+  top: 0;
 }
 
 a:active {
   color: #f000ff;
 }
+
