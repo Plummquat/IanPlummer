@@ -38,7 +38,7 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 
 [Creating Monthly Temperature Trend Plots in R](Temp_Plots.html) 
 
-[Downloading and Grpahing Data from Davis WeatherLink](DWL.html)
+[Downloading and Graphing Data from Davis WeatherLink](DWL.html)
 
 [Extracting SST Time Series from NOAA OISST Data](HROISST.html) 
 
@@ -53,7 +53,7 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 Mastodon @IMPlumm@sciencemastodon.com
  <center><iframe allowfullscreen sandbox="allow-top-navigation allow-scripts" width="800" height="400" src="https://www.mastofeed.com/apiv2/feed?userurl=https%3A%2F%2Fsciencemastodon.com%2Fusers%2FIMPlumm&theme=dark&size=100&header=true&replies=false&boosts=false"></iframe></center>
 
-[UAlbany GSEU](https://twitter.com/ualbanygseu) (I dont run this one)
+[UAlbany GSEU](https://twitter.com/ualbanygseu) (I don't run this one)
 
 ## [Personal Weather Station @ My Parents House on Long Island](https://www.wunderground.com/dashboard/pws/KNYGARDE22)
 
