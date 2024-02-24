@@ -30,3 +30,11 @@ p {
   border-style: dashed; 
 }
 
+leftcol {
+  color: green;
+  width:25%;
+  position:absolute;
+  left:5px;
+  top:0px;
+}
+
