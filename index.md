@@ -61,7 +61,7 @@ Mastodon @IMPlumm@sciencemastodon.com
 
 ## Weather Station I Hepled Install @ Union College in Schenectady, NY
 <center><iframe src='https://www.weatherlink.com/embeddablePage/show/98b30fed90af4d29913942f9fa1ab047/signature' width='760' height='200' frameborder='0'></iframe></center>
-<center><img src="TNY.png" width="200"/> <img src="ae6fe2f690886c3dbe1f9cdeffdeeb1e_w200.gif" width="200"> <img src="LICM.png" width="200"></center>
+<img src="ae6fe2f690886c3dbe1f9cdeffdeeb1e_w200.gif" width="200"> 
 
 
   
