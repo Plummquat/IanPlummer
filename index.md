@@ -1,9 +1,7 @@
 # Welcome to my page!
   
 Here I will be posting little bits about my research and other projects that I find interesting. Throughout this website you will find links to various things I have created, curated, or otherwise been a part of. 
-
-This is all fairly rudimentary as a result of my simple HTML and CSS skills but I plan on revamping it as I learn more. I'm a major proponent of free and easily accessible data and code, thus there is a lot of code that you should feel free to take and use as you like. 
-
+ 
 # About Me
 <center><img src="IMG_7110.jpg" alt="drawing" width="40%"></center>
 
