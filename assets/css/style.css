@@ -3,7 +3,7 @@
 body {
   font-family: "Literata", sans-serif;
   background-color: #41B3A3; /* Dark background color */
-  color: #E27D60; /* White text color */
+  color: #00000a; /* White text color */
   margin: 0;
 }
 
@@ -13,7 +13,7 @@ h1, h2, h3 {
 }
 
 h1 {
-  color: #85DCB; /* Blue for h1 */
+  color: #0000e4; /* Blue for h1 */
   font-family: 'monospace';
 }
 
@@ -26,7 +26,7 @@ p {
   color: #E27D60;
   font-family: 'monospace';
   font-size: 1.5em;
-  border: 2px dashed #85DCB; /* Border color matches h2 and h3 */
+  border: 2px dashed #0000e4; /* Border color matches h2 and h3 */
   padding: 10px;
 }
 
