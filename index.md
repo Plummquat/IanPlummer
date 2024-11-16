@@ -49,7 +49,7 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 [Instagram](https://www.instagram.com/plummquat/?hl=en)
 
 Mastodon @IMPlumm@sciencemastodon.com
- <center><iframe allowfullscreen sandbox="allow-top-navigation allow-scripts" width="800" height="400" src="https://www.mastofeed.com/apiv2/feed?userurl=https%3A%2F%2Fsciencemastodon.com%2Fusers%2FIMPlumm&theme=dark&size=100&header=true&replies=false&boosts=false"></iframe></center>
+ <center><iframe allowfullscreen sandbox="allow-top-navigation allow-scripts" width="800" height="400" src="https://bsky.app/profile/iplumm.bsky.social"></iframe></center>
 
 [UAlbany GSEU](https://twitter.com/ualbanygseu) (I don't run this one)
 
