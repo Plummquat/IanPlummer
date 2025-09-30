@@ -32,6 +32,8 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 
 ## Data Vis Stuff
 
+[Japanese Temperature Trends](JapanTempTrends.html)
+
 [Interactive Maps](Figs.md)
 
 [Creating Monthly Temperature Trend Plots in R](Temp_Plots.html) 
