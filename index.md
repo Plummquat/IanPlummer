@@ -13,28 +13,24 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 # Links!
 
 ## Research 
-[Coral Paleoclimate @ UAlbany](ulab.md)
+[What role does ENSO play in the relationship between the NAO and Red Sea SST?](https://link.springer.com/article/10.1007/s00382-025-07894-3#Sec8)
 
-[Undergrad Thesis on Peruvian Speleothems](Final_Project_Plummer.html) 
+## Climate and Geoscience Stuff
 
-## Geoscience Stuff
 [Professor Proxy](PP.html) 
 
+[Japanese Temperature Trends](JapanTempTrends.html)
+
+[Interactive Maps](Figs.md)
+
 [Cool Outcrops and Rocks](coar.md)
-
-[Monthly NY Climate Reports](nyclim.md)
-
-[Geology of New York State](download.png)
 
 [April 2022 Flooding in Schenectady](apr22flood.md)
 
 [May 2022 Flooding in Schenectady](mayflood.md) 
 
-## Data Vis Stuff
 
-[Japanese Temperature Trends](JapanTempTrends.html)
-
-[Interactive Maps](Figs.md)
+## Coding Guides
 
 [Creating Monthly Temperature Trend Plots in R](Temp_Plots.html) 
 
@@ -48,20 +44,19 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 ## Socials
 [Bluesky](https://bsky.app/profile/iplumm.bsky.social)
 
-[Twitter](https://twitter.com/plumquat)
-
 [Instagram](https://www.instagram.com/plummquat/?hl=en)
 
-Mastodon @IMPlumm@sciencemastodon.com
+[StoryGraph](https://app.thestorygraph.com/profile/plummquat?redirect=true)
+
+[Google Scholar](https://scholar.google.com/citations?hl=en&user=XXYy0TcAAAAJ)
 
 [UAlbany GSEU](https://twitter.com/ualbanygseu) (I don't run this one)
+
 
 ## [Personal Weather Station @ My Parents House on Long Island](https://www.wunderground.com/dashboard/pws/KNYGARDE22)
 
 <center><iframe src='https://www.weatherlink.com/embeddablePage/show/616845e98df74e75a1a3ef5333a96137/signature' width='760' height='200' frameborder='0'></iframe></center>
 
-## Weather Station I Hepled Install @ Union College in Schenectady, NY
-<center><iframe src='https://www.weatherlink.com/embeddablePage/show/98b30fed90af4d29913942f9fa1ab047/signature' width='760' height='200' frameborder='0'></iframe></center>
 <center><img src="ae6fe2f690886c3dbe1f9cdeffdeeb1e_w200.gif" width="200"></center>
 
 
