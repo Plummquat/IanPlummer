@@ -13,7 +13,7 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 # Links!
 
 ## Research 
-[What role does ENSO play in the relationship between the NAO and Red Sea SST?](https://link.springer.com/article/10.1007/s00382-025-07894-3#Sec8)
+[What role does ENSO play in the relationship between the NAO and Red Sea SST?](https://link.springer.com/article/10.1007/s00382-025-07894-3)
 
 ## Climate and Geoscience Stuff
 
