@@ -18,7 +18,7 @@ Welcome to the bird blog! This is a collection of bird pictures I have accumulat
 <center><font color= "white"><em> Adult - Peebles Island State Park, Cohoes, NY [4/24/26} </em></font></center>
   
 ## Blue Dacnis
-<center><img src="IMG_0478.HEIC" width="40%"> 
+<center><img src="IMG_0478.HEIC" width="40%"></center>
 <center><font color= "white"><em> [Left] Male - PETAR, Iporanga, Sao Paulo, Brazil [8/10/23} </em></font></center>
 
 ## Blue Jay
@@ -34,7 +34,7 @@ Welcome to the bird blog! This is a collection of bird pictures I have accumulat
 ## Eurasian Coot 
 
 ## Green-headed Tanager
-<center><img src="IMG_0478.HEIC" width="40%"> 
+<center><img src="IMG_0478.HEIC" width="40%"></center>
 <center><font color= "white"><em> [Right] Adult - PETAR, Iporanga, Sao Paulo, Brazil [8/10/23} </em></font></center>
   
 ## Mallard
