@@ -57,7 +57,7 @@ Welcome to the bird blog! This is a collection of bird pictures I have accumulat
 <em> Anas platyrhynchos </em> from the Latin for duck (anas), platus (flat), and rhynchos (bill, beak, snout).
 <center><img src="PC190276 Large.png" width="40%"></center>
 <center><font color= "white"><em> Adult Female (left) and Male (right) - Lake Kawaguchi, Fujikawaguchiko, Japan [12/19/24] </em></font></center>
-<center><img src="PP4240515 Large.png" width="40%"></center>
+<center><img src="P4240515 Large.png" width="40%"></center>
 <center><font color= "white"><em> Adult Males - Peebles Island State Park, Cohoes, NY [4/24/26] </em></font></center>
 
 ## Mourning Dove
