@@ -19,7 +19,7 @@ Welcome to the bird blog! This is a collection of bird pictures I have accumulat
   
 ## Blue Dacnis
 <em> Dacnis cayana </em> from the Greek daknis, referring to an unidentified Egyptian bird mentioned by ancient writers Hesychius of Alexandria and Sextus Pompeius Festus and Cayenne (French Guiana), a common location reference for species found in the Amazon region.
-<center><img src="IMG_0478.HEIC" width="40%"></center>
+<center><img src="IMG_0478 Large.jpeg" width="40%"></center>
 <center><font color= "white"><em> [Left] Male - PETAR, Iporanga, Sao Paulo, Brazil [8/10/23] </em></font></center>
 
 ## Blue Jay
@@ -37,14 +37,21 @@ Welcome to the bird blog! This is a collection of bird pictures I have accumulat
 
 ## Eurasian Coot 
 
+## Great Blue Heron
+<em> Ardea herodias </em> from the
+<center><img src="IMG_3922 Large.jpeg" width="40%"></center>
+<center><font color= "white"><em> [Right] Great Blue- Troy, NY [5/21/25] </em></font></center>
+
 ## Green-headed Tanager
 <em> Tangara seledon </em> from the Tupi language word tangara (roughly translates to dancer) and the Greek chelidon or chelidonos, meaning a swallow.
-<center><img src="IMG_0478.HEIC" width="40%"></center>
+<center><img src="IMG_0478 Large.jpeg" width="40%"></center>
 <center><font color= "white"><em> [Right] Adult - PETAR, Iporanga, Sao Paulo, Brazil [8/10/23] </em></font></center>
   
 ## Mallard
 
 ## Mourning Dove
+<center><img src="IMG_0338 Large.jpeg" width="40%"> <img src="IMG_0343 Large.jpeg" width="40%"></center>
+<center><font color= "white"><em> Adult - Nassau County, NY, [8/4/23] </em></font></center>
 
 ## Northern Yellow Warbler 
 
@@ -53,6 +60,9 @@ Welcome to the bird blog! This is a collection of bird pictures I have accumulat
 ## Red-winged Blackbird
 
 ## Spot-biled Toucanet
+<em> Selenidera maculirostris </em> from the Ancient Greek words selēnē (moon) and dera (neck) and the Latin macula (spot or stain) and rostris (billed or beak)
+<center><img src="IMG_0585 Large.jpeg" width="40%"> <img src="IMG_0587 Large.jpeg" width="40%"></center>
+<center><font color= "white"><em> Male - PETAR, Iporanga, Sao Paulo, Brazil [8/10/23] </em></font></center>
 
 ## Yellow-rumped Warbler
 <em> Setophaga coronata </em> from the Ancient Greek ses (moth) and phagos (eating) and the Latin coronatus (crowned). 
