@@ -53,10 +53,10 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 [UAlbany GSEU](https://twitter.com/ualbanygseu) (I don't run this one)
 
 ## Miscellaneous
+[Bird Blog](birds.md)
+
 [Personal Weather Station @ My Parents House on Long Island](https://www.wunderground.com/dashboard/pws/KNYGARDE22)
 <center><iframe src='https://www.weatherlink.com/embeddablePage/show/616845e98df74e75a1a3ef5333a96137/signature' width='760' height='200' frameborder='0'></iframe></center>
-
-[Bird Blog](birds.md)
 
 <center><img src="ae6fe2f690886c3dbe1f9cdeffdeeb1e_w200.gif" width="200"></center>
 
