@@ -25,7 +25,7 @@ Welcome to the bird blog! This is a collection of bird pictures I have accumulat
 ## Blue Jay
 <em> Cyanocitta cristata </em> from the Greek kyanos (dark or bright blue) and kitta (chattering bird/jay) and the Latin cristata (crested).
 <center><img src="IMG_5618 Large.jpeg" width="40%"> <img src="IMG_5620 Large.jpeg" width="40%"></center>
-<center><font color= "white"><em> Adult - SUNY Albany, Albany, NY, [4/23/26] </em></font></center>
+<center><font color= "white"><em> Adult - SUNY Albany, Albany, NY [4/23/26] </em></font></center>
 
 ## Downy Woodpecker
 <em> Dryobates pubescens </em> from the Greek drus (tree or woodland) and bates (walker or treader) and the Latin pubescens (covered in short hair i.e. downy).
@@ -52,7 +52,13 @@ Welcome to the bird blog! This is a collection of bird pictures I have accumulat
 <em> Tangara seledon </em> from the Tupi language word tangara (roughly translates to dancer) and the Greek chelidon or chelidonos, meaning a swallow.
 <center><img src="IMG_0478 Large.jpeg" width="40%"></center>
 <center><font color= "white"><em> [Right] Adult - PETAR, Iporanga, Sao Paulo, Brazil [8/10/23] </em></font></center>
-  
+
+## Killdeer 
+<em> Charadrius vociferus </em> from the Ancient Greek kharadrios a bird found in ravines and river valleys (kharadra meaning ravine) and the Latin vox (cry) and ferre (to bear). 
+<center><img src="P4270573.jpg" width="40%"><img src="P4270608.jpg" width="40%"></center>
+<center><img src="P4270610.jpg" width="40%"><img src="P4270611.jpg" width="40%"></center>
+<center><font color= "white"><em> Adult - SUNY Albany, Albany, NY [4/27/26] </em></font></center>
+
 ## Mallard
 <em> Anas platyrhynchos </em> from the Latin for duck (anas), platus (flat), and rhynchos (bill, beak, snout).
 <center><img src="PC190276 Large.png" width="40%"></center>
@@ -63,28 +69,28 @@ Welcome to the bird blog! This is a collection of bird pictures I have accumulat
 ## Mourning Dove
 <em> Zenaida macoura </em> named to commemorate Zénaïde Bonaparte, the niece of Napoleon Bonaparte and the Ancient Greek makros (long/large) and oura (tail).
 <center><img src="IMG_0338 Large.jpeg" width="40%"> <img src="IMG_0343 Large.jpeg" width="40%"></center>
-<center><font color= "white"><em> Adult - Nassau County, NY, [8/4/23] </em></font></center>
+<center><font color= "white"><em> Adult - Nassau County, NY [8/4/23] </em></font></center>
 
 ## Northern Cardinal
 <em> Cardinalis cardinalis </em> from the Latin cardinalis, meaning "principal," "chief," or "essential," derived from cardo ("hinge"). The term was applied to high-ranking Roman Catholic officials ("hinge men") who held critical, central roles in church governance, often donning red to symbolize their dedication. Early North American settlers and naturalists named the bird "cardinal" due to this visual association between the male’s bright red color and the church official’s vestments.
 <center><img src="P1010433 Large.png" width="40%"></center>
-<center><font color= "white"><em> Male - Green Island, NY, [4/23/26] </em></font></center>
+<center><font color= "white"><em> Male - Green Island, NY [4/23/26] </em></font></center>
 
 ## Northern Mockingbird
 <em> Mimus polyglottos </em> from the Latin mimus (mimic, imitator, or actor) and the Ancient Greek poluglottos (many tongued).
-<center><img src="IMG_5567.jpeg" width="40%"></center>
-<center><font color= "white"><em> Adult - SUNY Albany, Albany, NY, [4/14/26] </em></font></center>
+<center><img src="IMG_5567.jpeg" width="40%"><img src="P4270653.jpg" width="40%"></center>
+<center><font color= "white"><em> Adult - SUNY Albany, Albany, NY [4/14/26] Adult - SUNY Albany, Albany, NY [4/27/26] </em></font></center>
 
 ## Northern Yellow Warbler 
 <em> Setophaga aestiva </em> from the Ancient Greek ses (moth) and phagos (eating) and the Latin aestivus (of summer/summer-like).
 <center><img src="IMG_5603 Large.png" width="40%"> <img src="IMG_5604 Large.png" width="40%"></center>
 <center><img src="IMG_5605 Large.png" width="40%"> <img src="IMG_5606 Large.png" width="40%"></center>
-<center><font color= "white"><em> Adult Male - SUNY Albany, Albany, NY, [4/22/26] </em></font></center>
+<center><font color= "white"><em> Adult Male - SUNY Albany, Albany, NY [4/22/26] </em></font></center>
 
 ## Osprey
 <em> Pandion haliaetus. </em> Pandion refers to a mythical Athenian King (Pandion II), whose daughters were turned into birds to escape torture, while haliaetus stems from the Ancient Greek haliaietos (from halos "sea" and aetos "eagle"). 
 <center><img src="P1010373.jpg" width="40%"> <img src="P1010376.jpg" width="40%"></center>
-<center><font color= "white"><em> Adult - Green Island, NY, [4/23/26] </em></font></center>
+<center><font color= "white"><em> Adult - Green Island, NY [4/23/26] </em></font></center>
 
 ## Red-winged Blackbird
 <em> Agelaius phoeniceus </em> from the Ancient Greek agelaios which means "belonging to a flock" or "gregarious" and the Greek phoinikeos or Latin phoeniceus, meaning "crimson" or "scarlet". This is related to the Phoenicians, known for their production of reddish-purple dyes. 
