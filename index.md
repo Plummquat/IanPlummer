@@ -42,7 +42,7 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 ## Socials
 [Bluesky](https://bsky.app/profile/iplumm.bsky.social)
 
-[Instagram](https://www.instagram.com/plummquat/?hl=en)
+[Twitter](https://x.com/plumquat)
 
 [StoryGraph](https://app.thestorygraph.com/profile/plummquat?redirect=true)
 
