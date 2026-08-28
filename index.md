@@ -32,8 +32,6 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 
 ## Coding Guides
 
-[Creating Monthly Temperature Trend Plots in R](Temp_Plots.html) 
-
 [Downloading and Graphing Data from Davis WeatherLink](DWL.html)
 
 [Extracting SST Time Series from NOAA OISST Data](HROISST.html) 
@@ -54,9 +52,6 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 
 ## Miscellaneous
 [Bird Blog](birds.md)
-
-[Personal Weather Station @ My Parents House on Long Island](https://www.wunderground.com/dashboard/pws/KNYGARDE22)
-<center><iframe src='https://www.weatherlink.com/embeddablePage/show/616845e98df74e75a1a3ef5333a96137/signature' width='760' height='200' frameborder='0'></iframe></center>
 
 <center><img src="ae6fe2f690886c3dbe1f9cdeffdeeb1e_w200.gif" width="200"></center>
 
