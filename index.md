@@ -50,7 +50,7 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 
 [Google Scholar](https://scholar.google.com/citations?hl=en&user=XXYy0TcAAAAJ)
 
-[UAlbany GSEU](https://twitter.com/ualbanygseu) (I don't run this one)
+[eBird](https://ebird.org/profile/OTE0ODAwMg)
 
 ## Miscellaneous
 [Bird Blog](birds.md)
