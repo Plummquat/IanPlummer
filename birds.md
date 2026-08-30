@@ -1,4 +1,4 @@
-Welcome to the bird blog! This is a collection of bird pictures I have accumulated over the years and will periodically update. I have organized it alphabetically by the common name of the bird. Right click on the images to open them in full resolution.
+Welcome to the bird blog! This is a collection of bird pictures I have accumulated over the years and will periodically update. Check out my [eBird](https://ebird.org/profile/OTE0ODAwMg) for my full lifer list. I have organized it alphabetically by the common name of the bird. Right click on the images to open them in full resolution.
 
 ## American Goldfinch 
 <em> Spinus tristis </em> from Spinus (an Ancient Greek word for finch) and the Latin tristis for sad/sorrowful. This is a common botanical and zoological epithet for muted colors or, in this case, a reference to the dull plumage displayed in the winter compared to its bright summer yellow.
@@ -37,6 +37,8 @@ Welcome to the bird blog! This is a collection of bird pictures I have accumulat
 <em> Sialia sialis </em> from the Greek sialis (often interpreted as a "bird" or a blue-colored bird like a thrush).
 <center><img src="P4240516.jpg" width="40%"></center>
 <center><font color= "white"><em> Adult Male - Peebles Island State Park, Cohoes, NY [4/24/26] </em></font></center>
+<center><img src="EastBluebird_1.jpg" width="40%"></center><center><img src="EasternBluebird_2.jpg" width="40%"></center>
+<center><font color= "white"><em> Adult Male - Peebles Island State Park, Cohoes, NY [5/01/26] </em></font></center>
 
 ## Eurasian Coot 
 <em> Fulica atra </em> from Latin fulica (coot) and atra (black, dark, gloomy).
@@ -46,7 +48,9 @@ Welcome to the bird blog! This is a collection of bird pictures I have accumulat
 ## Great Blue Heron
 <em> Ardea herodias </em> from the Latin word for heron (Ardea) and the Ancient Greek word for heron (erōdios).
 <center><img src="IMG_3922 Large.jpeg" width="40%"></center>
-<center><font color= "white"><em> [Right] Great Blue- Troy, NY [5/21/25] </em></font></center>
+<center><font color= "white"><em> Great Blue- Troy, NY [5/21/25] </em></font></center>
+<center><img src="GreatBlueHeron_2.jpeg" width="40%"></center><center><img src="GreatBlueHeron_3.jpeg" width="40%"></center>
+<center><font color= "white"><em> Great Blue- SUNY Albany, Albany, NY [6/04/26] </em></font></center>
 
 ## Green-headed Tanager
 <em> Tangara seledon </em> from the Tupi language word tangara (roughly translates to dancer) and the Greek chelidon or chelidonos, meaning a swallow.
@@ -96,6 +100,16 @@ Welcome to the bird blog! This is a collection of bird pictures I have accumulat
 <em> Agelaius phoeniceus </em> from the Ancient Greek agelaios which means "belonging to a flock" or "gregarious" and the Greek phoinikeos or Latin phoeniceus, meaning "crimson" or "scarlet". This is related to the Phoenicians, known for their production of reddish-purple dyes. 
 <center><img src="P1010404 Large.png" width="40%"> <img src="P1010405 Large.png" width="40%"></center>
 <center><font color= "white"><em> Adult Male - Van Schaick Island, NY [4/23/26] </em></font></center>
+
+## Rose-breasted Grosbeak
+<em> Pheucticus ludovicianus </em> from the Ancient Greek pheuktikos which means "shy" or "avoiding" and the new latin ludovicianus, meaning "from Louisiana". The common name "grosbeak" comes from the French phrase gros bec, which means "large beak".
+<center><img src="RoseBreastedGros_1.jpg" width="40%"> <img src="RoseBreastedGros_2.jpg" width="40%"></center>
+<center><font color= "white"><em> Adult Male - SUNY Albany, Albany, NY [5/05/26] </em></font></center>
+
+## Spotted Sandpiper
+<em> Actitis macularius </em> from the Ancient Greek word aktites, which means "coast-dweller" or "resident of the coast" and the Latin word macula, which means "spot" or "stained". 
+<center><img src="SpottedSandpiper_1.jpg" width="40%"> <img src="SpottedSandpiper_2.jpg" width="40%"></center>
+<center><font color= "white"><em> Adult Male - Ann Lee Pond, Albany, NY [5/08/26] </em></font></center>
 
 ## Spot-biled Toucanet
 <em> Selenidera maculirostris </em> from the Ancient Greek words selēnē (moon) and dera (neck) and the Latin macula (spot or stain) and rostris (billed or beak).
