@@ -13,7 +13,7 @@ I'm a PhD student working in the Paleoclimate Lab of the University at Albany in
 # Links!
 
 ## Research 
-[What can the longest coral record from the Red Sea tell us about forcing from the Atlantic and Indian ocean?](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL124065)
+[What can the longest coral record from the Red Sea tell us about forcing from the Atlantic and Indian Ocean?](https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL124065)
 
 [What role does ENSO play in the relationship between the NAO and Red Sea SST?](https://link.springer.com/article/10.1007/s00382-025-07894-3)
 
